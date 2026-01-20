@@ -14,4 +14,4 @@ jobs:
       - name: Install Dependence Pkgs
         run: npm install
       - name: Build Site
-        run: npm run build:prod
+        run: npx tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify && npx eleventy --incremental
