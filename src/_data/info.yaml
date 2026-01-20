@@ -1,0 +1,12 @@
+companyName: "有限会社 新田菓子舗"
+tel: "0867-66-2116"
+address:
+  zip: 717-0505
+  pref: 岡山県
+  city: 真庭市
+  street: 蒜山上長田459-13
+openDays: "不定休(施設の休館日に準ずる)"
+businessHours: "8:00 - 19:00"
+shopName: "ヒルゼンのお菓子屋 新田菓子舗"
+latitude: !!float 35.284025
+longitude: !!float 133.6967223

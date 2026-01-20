@@ -1,0 +1,104 @@
+product:
+  - id: koban
+    name: チーズケーキ
+    variant:
+      - piece: 10
+        unit: 個入
+        price: 840
+    description: >
+      ソフトでマイルドな味覚。クリームチーズをたっぷり使って焼いてます。サイズも食べやすい大きさになってます。お子様にも大人気！
+    image: "assets/img/sweets/koban/koban_3.jpg"
+
+  - id: sabre
+    name: 牛乳サブレー
+    variant:
+      - piece: 10
+        unit: 個入
+        price: 740
+      - piece: 20
+        unit: 個入
+        price: 1480
+    description: >
+      牛乳と卵をたっぷり使った歯ごたえのあるサブレー。かわいい子牛を型どってます。お口の中にミルクの味がひろがります。
+    image: "assets/img/sweets/sable/sable_KV.jpg"
+  - id: caramel
+    name: 牛乳キャラメルクッキー
+    variant:
+      - piece: 12
+        unit: 個入
+        price: 780
+    description: >
+      キャラメル味のホワイトチョコをくるんだ、やわらかい食感のソフトクッキー。お子様から大人まで人気の商品です。
+    image: "assets/img/sweets/caramel/caramelCookie_KV.jpg"
+  - id: tsubu
+    name: 手作りつぶクッキー
+    variant:
+      - piece: 110
+        unit: グラム
+        price: 400
+    description: >
+      お茶うけやちょっとしたおやつに、サクサクのこつぶクッキー。
+      レモン・ココア・チーズの3種類の味が楽しめます。
+    image: "assets/img/sweets/tsubu/tubucookie.jpg"
+  - id: cheeseCake
+    name: 蒜山ジャージーチーズケーキ
+    variant:
+      - piece: 12
+        unit: cm
+        price: 700
+    description: >
+      新鮮な蒜山ジャージー牛乳とたっぷりクリーミーなチーズでつくったチーズケーキです。
+    image: "assets/img/sweets/cake/butterCake.jpg"
+  - id: chocoCake
+    name: チョコレートケーキ
+    variant:
+      - piece: 12
+        unit: cm
+        price: 700
+    description: >
+      ホワイトチョコレートとバンホーテンココアを使用したショコラケーキです。
+    image: "assets/img/sweets/cake/chocoCake.jpg"
+  - id: manju
+    name: ヒルゼン高原まんじゅう
+    variant:
+      - piece: 10
+        unit: 個入
+        price: 1500
+      - piece: 15
+        unit: 個入
+        price: 2250
+    description: >
+      新田菓子舗を代表する和菓子がこの「ヒルゼン高原まんじゅう」です。蒜山高原センターでは毎日、お客様を前にしての実演販売も行なっています。菓子につかう、こしあんとジャージー牛乳カステラとの絶妙な組み合わせ！保存剤など一切使っておりません。
+    image: "assets/img/sweets/kougenManju/kougen_manzyuu_1.jpg"
+  - id: souffle
+    name: 蒜山スフレチーズケーキ
+    variant:
+      - piece: 15
+        unit: cm
+        price: 1700
+    description: >
+      3種類のたっぷりのクリームチーズと蒜山高原特産のジャージー牛乳を使って、じっくりと焼き上げて作った手作りのチーズケーキです。
+      この商品は手作りの限定の商品の為、選ばれた販売店でしか販売していません。
+    image: "assets/img/sweets/souffle/souffle.jpg"
+  - id: hachimitsu
+    name: 黄金はちみつケーキ
+    variant:
+      - piece: 18
+        unit: cm
+        price: 1400
+    description: >
+      新鮮なたまごと蜂蜜を練り込んだ生地に、焼成後にもはちみつを塗り込んで作ったしっとりケーキです。
+    image: "assets/img/sweets/hachimitsu/hachimitsu.jpg"
+
+discontinued:
+  - id: nyuka
+    name: 蒜山乳菓
+    image: "assets/img/sweets/nyuka/nyuuka2.jpg"
+  - id: ame
+    name: 蒜山キャンディー
+    price: 500
+    description: >
+      蒜山の自然な甘さを活かした手作りキャンディーです。お子様から大人まで楽しめる一品です。
+    image: "assets/img/sweets/.jpg"
+
+  - id: nyuuka

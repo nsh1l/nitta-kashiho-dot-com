@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@shopify/prettier-plugin-liquid",
+    "@shopify/liquid-html-parser",
+    "prettier-plugin-jinja-template"
+  ],
+  "overrides": [
+    {
+      "files": "*.njk",
+      "options": {
+        "parser": "jinja-template"
+      }
+    }
+  ]
+}

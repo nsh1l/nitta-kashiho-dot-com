@@ -1,0 +1,52 @@
+<section class="bg-gray-50 px-4 py-12">
+  <h2 class="mb-6 text-xl font-semibold">場所・アクセス</h2>
+  <div class="mb-4 text-sm leading-relaxed">
+    <p>〒{{ info.address.zip }}</p>
+    <p>
+      {{ info.address.pref -}}
+      {{- info.address.city -}}
+      {{- info.address.street }}
+    </p>
+  </div>
+
+  <div class="mb-4 text-sm leading-relaxed">
+    <p>
+      電話番号:
+      <span>
+        <a
+          href="tel:{{ info.tel | remove: ' ' }}"
+          class="text-blue-600 underline"
+        >
+          {{ info.tel }}
+        </a>
+      </span>
+    </p>
+    <p>営業時間: {{ info.businessHours }}</p>
+    <p>定休日: {{ info.openDays }}</p>
+  </div>
+
+  <!-- Leaflet.js Map Container -->
+  <div
+    x-data="mapComponent()"
+    x-init="initMap()"
+    id="map"
+    class="h-64 w-full mb-4"
+    data-lat="{{ info.latitude }}"
+    data-lng="{{ info.longitude }}"
+    data-company="{{ info.companyName }}"
+    data-pref="{{ info.address.pref }}"
+    data-city="{{ info.address.city }}"
+    data-street="{{ info.address.street }}"
+  ></div>
+
+  <p>
+    <a
+      href="https://maps.app.goo.gl/esp86D2EaypwqxibA"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-600 underline after:content-['_↗']"
+    >
+      Google Mapsで見る
+    </a>
+  </p>
+</section>
