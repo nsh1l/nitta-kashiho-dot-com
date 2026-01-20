@@ -1,0 +1,17 @@
+name: build site
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.2.0
+      - name: Install Dependence Pkgs
+        run: npm install
+      - name: Build Site
+        run: npx tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify && npx eleventy --incremental
