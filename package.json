@@ -1,0 +1,26 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@types/bun": "latest",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "prettier-plugin-jinja-template": "^2.1.0",
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@shopify/prettier-plugin-liquid": "^1.10.0",
+    "@shopify/liquid-html-parser": "^2.9.0",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "yaml": "^2.8.2"
+  },
+  "name": "kashiho-renew",
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "build:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify",
+    "build:prod": "bun run build:css && eleventy --incremental",
+    "start": "bun run build:css && eleventy --serve --incremental"
+  }
+}
