@@ -1,0 +1,35 @@
+<section class="px-4 py-12">
+  <h2 class="mb-6 text-xl font-semibold">商品</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {% for product in products.product %}
+      <div class="flex flex-col">
+        <div class="w-full mb-4">
+          <img
+            x-data="image"
+            x-bind:onerror="handleError"
+
+            src="{{ product.image }}"
+            alt="{{ product.name }}"
+            class="mb-2 aspect-video w-full object-cover"
+            loading="lazy"
+          >
+        </div>
+        <div class="w-full flex flex-col">
+          <p class="text-sm font-medium">{{ product.name }}</p>
+          <p class="text-xs text-gray-600 mb-2">{{ product.description }}</p>
+
+          <!-- Variants section -->
+          <div class="mt-auto">
+            {% for variant in product.variant %}
+              <div class="text-xs">
+                {{ variant.piece -}}
+                {{- variant.unit }}/ {{ variant.price }}円
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
