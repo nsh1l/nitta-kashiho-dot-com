@@ -4,7 +4,7 @@
     "@11ty/eleventy": "^3.1.2",
     "@types/bun": "latest",
     "postcss": "^8.5.6",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-jinja-template": "^2.1.0",
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/postcss": "^4.1.18",
@@ -16,7 +16,7 @@
   "name": "kashiho-renew",
   "private": true,
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "build:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify",
