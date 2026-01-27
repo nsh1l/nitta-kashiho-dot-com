@@ -11,7 +11,9 @@ export default function (eleventyConfig) {
   eleventyConfig.setIncludesDirectory("_includes");
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.ignores.add("README.md, CLAUDE.md, AGENTS.md");
+  eleventyConfig.ignores.add(
+    ".gitignore, .prettierrc, bun.lock, postcss.config.mjs, README.md, CLAUDE.md, AGENTS.md",
+  );
   eleventyConfig.addDataExtension("yml, yaml", (contents) =>
     YAML.parse(contents),
   );
