@@ -1,5 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=LINE+Seed+JP&display=swap);
 @import "tailwindcss";
 
 @theme {
-  --font-family-base: "LINE Seed JP", sans-serif;
+  --default-font-family: "LINE Seed JP", sans-serif;
 }
