@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Checkout Repos
         uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6.2.0
-      - name: Install Dependence Pkgs
-        run: npm install
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.1.2
+        with:
+          bun-version: latest 
       - name: Build Site
-        run: npx tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify && npx eleventy --incremental
+        run: bun run build:prod
