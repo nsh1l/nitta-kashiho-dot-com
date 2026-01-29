@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "kiso.css": "^1.2.4"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@shopify/liquid-html-parser": "^2.9.0",
