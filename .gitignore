@@ -5,7 +5,7 @@ node_modules/
 out/
 dist/
 *.tgz
-_site
+_site/
 
 # code coverage
 coverage
