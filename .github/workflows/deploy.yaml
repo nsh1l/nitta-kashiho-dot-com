@@ -11,11 +11,13 @@ jobs:
     steps:
       - name: Checkout Repos
         uses: actions/checkout@v4
+        with:
+          lfs: true
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2.1.2
         with:
           bun-version: latest
       - name: Install Dependencies
-        run: bun install    
+        run: bun install
       - name: Build Site
         run: bun build:prod
