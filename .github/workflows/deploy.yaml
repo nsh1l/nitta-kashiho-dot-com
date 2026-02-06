@@ -33,9 +33,10 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Commit Changes
         run: |
-          git add .
+          git branch -M deploy
+          git add -f .
           git commit -m "Build site - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
       - name: Push _site to deploy branch
         run: |
-          git branch -M deploy
-          git push -u origin deploy --force
+          git lfs push origin deploy --all
+          git push -f origin deploy
