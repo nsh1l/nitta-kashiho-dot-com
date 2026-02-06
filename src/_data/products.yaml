@@ -88,7 +88,7 @@ product:
         price: 1400
     description: >
       新鮮なたまごと蜂蜜を練り込んだ生地に、焼成後にもはちみつを塗り込んで作ったしっとりケーキです。
-    image: "assets/img/sweets/hachimitsu/hachimitsu.jpg"
+    image: "assets/img/sweets/hachimitsu/hachimitu.jpg"
 
 discontinued:
   - id: nyuka
