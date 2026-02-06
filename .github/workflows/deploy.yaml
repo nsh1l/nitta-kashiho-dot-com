@@ -32,7 +32,7 @@ jobs:
           if ! git ls remote --exit-code --heads origin deploy; then
             git checkout --orphan deploy
           else
-            git checkout deploy
+            git checkout deploy --rebase
           fi
 
           cp -r _site/* .
