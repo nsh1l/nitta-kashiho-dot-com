@@ -29,11 +29,11 @@ jobs:
         run: bun build:prod
       - name: Push _site to deploy branch
         run: |
-          if ! git ls remote --exit-code --heads origin deploy; then
-            git checkout --orphan deploy
-          else
-            git checkout deploy --rebase
-          fi
+          git fetch origin deploy
+          git checkout deploy || git checkout --orphan deploy
+          git reset --hard
+
+          git push --force origin deploy
 
           cp -r _site/* .
 
