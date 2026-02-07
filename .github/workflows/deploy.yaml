@@ -33,7 +33,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Commit Changes
         run: |
-          git add -f .
+          git add -f _site/
           git commit -m "Build site - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
       - name: Push _site to deploy branch
         run: |
