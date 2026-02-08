@@ -33,4 +33,5 @@ jobs:
           SOURCE: "_site/"
           REMOTE_HOST: ${{ secrets.HOST_SERVER }}
           REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: ${{ secrets.PORT }}
           TARGET: ${{ secrets.TARGET_PATH }}
