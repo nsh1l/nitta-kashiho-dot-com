@@ -1,10 +1,10 @@
-name: build site
+name: Build and Deploy development site
 on:
   push:
     branches:
       - main
     paths-ignore:
-      - _site/**
+      - "_site/**"
 
 permissions:
   contents: write
@@ -12,7 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repos
         uses: actions/checkout@v4
@@ -27,16 +26,11 @@ jobs:
         run: bun install
       - name: Build Site
         run: bun build:prod
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Commit Changes
-        run: |
-          git add -f _site/
-          git commit -m "Build site - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-      - name: Push _site to deploy branch
-        run: |
-          git branch -M deploy
-          git lfs push origin deploy --all
-          git push -f origin deploy
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.GH_SSH_KEY }}
+          SOURCE: "_site/"
+          REMOTE_HOST: ${{ secrets.HOST_SERVER }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_PATH }}
