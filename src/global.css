@@ -4,3 +4,7 @@
 @theme {
   --font-sans: "LINE Seed JP", sans-serif;
 }
+
+.map {
+  height: 400px;
+}
