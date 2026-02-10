@@ -9,7 +9,7 @@
       {{- info.address.street }}
     </p>
     <p>「上長田郵便局」すぐ隣</p>
-    <p>駐車場: あり (5台)
+    <p>駐車場: あり (5台)</p>
   </div>
 
   <div class="mb-4 text-sm leading-relaxed">
@@ -29,6 +29,50 @@
     <p>お支払い方法: 現金のみ、PayPay・クレジットカード等の電子決済はご利用いただけません。</p>
   </div>
 
+  <script>
+    // Alpine の初期化イベントを待つ
+    function initMapComponent() {
+      Alpine.data('mapComponent', () => ({
+        initMap() {
+          this.$nextTick(() => {
+            const mapContainer = document.getElementById('map');
+            if (!mapContainer) return;
+
+            const lat = parseFloat(mapContainer.dataset.lat);
+            const lng = parseFloat(mapContainer.dataset.lng);
+            const company = mapContainer.dataset.company || '';
+            const pref = mapContainer.dataset.pref || '';
+            const city = mapContainer.dataset.city || '';
+            const street = mapContainer.dataset.street || '';
+
+            if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+              console.warn('Invalid coordinates:', { lat, lng });
+              return;
+            }
+
+            try {
+              const map = L.map(mapContainer).setView([lat, lng], 18);
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              }).addTo(map);
+
+              L.marker([lat, lng]).addTo(map).bindPopup(`${company}<br>${pref} ${city} ${street}`).openPopup();
+
+              console.log('Map initialized successfully');
+            } catch (error) {
+              console.error('Map initialization error:', error);
+            }
+          });
+        },
+      }));
+    }
+    if (typeof Alpine !== 'undefined' && Alpine.version) {
+      initMapComponent();
+    } else {
+      document.addEventListener('alpine:init', initMapComponent);
+    }
+  </script>
   <!-- Leaflet.js Map Container -->
   <div
     x-data="mapComponent()"
@@ -41,8 +85,7 @@
     data-pref="{{ info.address.pref }}"
     data-city="{{ info.address.city }}"
     data-street="{{ info.address.street }}"
-  >
-  </div>
+  ></div>
 
   <div>
     <p>
