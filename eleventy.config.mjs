@@ -20,6 +20,8 @@ export default function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
+  
+  eleventyConfig.addShortcode("modified-year", () => `${new Date().getFullYear()}`);
 
   //compile tailwind before eleventy processes the files
   eleventyConfig.on("eleventy.before", async () => {
