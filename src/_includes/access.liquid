@@ -51,7 +51,7 @@
             }
 
             try {
-              const map = L.map(mapContainer).setView([lat, lng], 18);
+              const map = L.map(mapContainer).setView([lat, lng - 1], 13);
 
               L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -78,7 +78,7 @@
     x-data="mapComponent()"
     x-init="initMap()"
     id="map"
-    class="h-64 w-full mb-4"
+    class="h-64 md:h-96 w-full md:w-3xl mb-4"
     data-lat="{{ info.latitude }}"
     data-lng="{{ info.longitude }}"
     data-company="{{ info.companyName }}"
