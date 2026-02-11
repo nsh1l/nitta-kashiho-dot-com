@@ -4,3 +4,17 @@
 @theme {
   --font-sans: "LINE Seed JP", sans-serif;
 }
+@layer components {
+  .document-container {
+    @apply mx-auto max-w-3xl p-4;
+  }
+  .document-container h1 {
+    @apply mb-6 text-2xl font-bold;
+  }
+  .document-container h2 {
+    @apply text-2xl font-bold;
+  }
+  .document-container p {
+    @apply my-4 leading-relaxed;
+  }
+}

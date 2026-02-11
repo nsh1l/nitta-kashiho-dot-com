@@ -1,5 +1,6 @@
 ---
 title: about
+layout: docs
 ---
 
 # 有限会社 新田菓子舗

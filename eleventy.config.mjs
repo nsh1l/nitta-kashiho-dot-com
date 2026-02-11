@@ -4,6 +4,7 @@ import path from "path";
 import postcss from "postcss";
 import tailwindcss from "@tailwindcss/postcss";
 import YAML from "yaml";
+import markdown from "markdown-it";
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
@@ -20,8 +21,19 @@ export default function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
-  
-  eleventyConfig.addShortcode("modifiedYear", () => `${new Date().getFullYear()}`);
+
+  eleventyConfig.addShortcode(
+    "modifiedYear",
+    () => `${new Date().getFullYear()}`,
+  );
+
+  eleventyConfig.setLibrary(
+    "md",
+    markdown({
+      html: true,
+      linkify: true,
+    }),
+  );
 
   //compile tailwind before eleventy processes the files
   eleventyConfig.on("eleventy.before", async () => {

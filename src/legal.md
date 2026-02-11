@@ -1,5 +1,6 @@
 ---
-title: 特定商取引に関する法律に基づく表示
+title: 特定商取引法に基づく表記
+layout: docs
 ---
 
 # 特定商取引に関する法律に基づく表示
@@ -14,7 +15,7 @@ title: 特定商取引に関する法律に基づく表示
 
 ## URL
 
-[https://nitta-kashiho.com]
+[https://nitta-kashiho.com](https://nitta-kashiho.com)
 
 ## 代表者
 
@@ -30,7 +31,7 @@ title: 特定商取引に関する法律に基づく表示
 
 ## 所在地（郵便番号）
 
-〒717-0505
+717-0505
 
 ## 所在地
 
@@ -46,7 +47,7 @@ title: 特定商取引に関する法律に基づく表示
 
 ## E-Mail
 
-[mailto://tyuuji@po.harenet.ne.jp]
+[contact@nitta-kashiho.com](mailto://contact@nitta-kashiho.com)
 
 ## 商品代金以外の必要料金代金
 
