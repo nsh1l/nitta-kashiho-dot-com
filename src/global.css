@@ -5,11 +5,25 @@
   --font-sans: "LINE Seed JP", sans-serif;
 }
 @layer components {
+  .writing-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+  .writing-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+  .writing-horizontal-tb {
+    writing-mode: horizontal-tb;
+  }
+
   .document-container {
-    @apply mx-auto max-w-3xl p-4;
+    @apply z-1 mx-auto max-w-3xl p-4;
   }
   .document-container h1 {
-    @apply mb-6 text-2xl font-bold;
+    writing-mode: vertical-lr;
+    @apply z-0 m-4 text-3xl font-extrabold text-gray-900 text-nowrap;
+  }
+  .document-container:not(h1){
+    @apply flex flex-col;
   }
   .document-container h2 {
     @apply text-2xl font-bold;
