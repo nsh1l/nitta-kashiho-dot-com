@@ -4,10 +4,23 @@
     href="mailto:contact@nitta-kashiho.com"
     class="inline-block bg-white px-6 py-3 text-sm font-medium text-gray-900"
   >
-    お問い合わせ
+    メールでお問い合わせ
   </a>
+  <p class="py-3">
+    工場直通:<br>
+    <a
+      href="tel:{{ info.tel }}"
+      class="text-blue-400 underline"
+    >
+      {{ info.tel }}
+    </a>
+  </p>
   <p class="top-8 mt-12 content-center text-xs text-gray-400">
     Copyright © 1979 - {% modifiedYear %}
     有限会社新田菓子舗 all rights reserved.
   </p>
+  <div class="mt-4 text-xs text-gray-500">
+    <a href="/legal">
+      特定商取引法に基づく表記
+    </a>
 </section>
