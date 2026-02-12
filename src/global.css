@@ -20,7 +20,7 @@
   }
   .document-container h1 {
     writing-mode: vertical-lr;
-    @apply fixed start-0 top-2 left-8 z-0 mb-6 text-4xl font-extrabold text-gray-900;
+    @apply fixed start-0 sm:end-0 top-2 left-8 sm:left-0 z-0 mb-6 text-3xl font-extrabold text-gray-900 text-nowrap;
   }
   .document-container h2 {
     @apply text-2xl font-bold;
