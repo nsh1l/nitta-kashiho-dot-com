@@ -5,6 +5,9 @@
   --font-sans: "LINE Seed JP", sans-serif;
 }
 @layer components {
+  .geolonia {
+    @apply h-64 sm:h-96 w-full md:w-3xl mb-4
+  }
   .writing-vertical-rl {
     writing-mode: vertical-rl;
   }
