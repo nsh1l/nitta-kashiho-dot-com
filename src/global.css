@@ -16,14 +16,10 @@
   }
 
   .document-container {
-    @apply z-1 mx-auto max-w-3xl p-4;
+    @apply mx-auto flex max-w-3xl flex-col items-start p-4;
   }
   .document-container h1 {
-    writing-mode: vertical-lr;
-    @apply z-0 m-4 text-3xl font-extrabold text-gray-900 text-nowrap;
-  }
-  .document-container:not(h1){
-    @apply flex flex-col;
+    @apply mb-4 text-3xl font-semibold text-wrap text-gray-900;
   }
   .document-container h2 {
     @apply text-2xl font-bold;
