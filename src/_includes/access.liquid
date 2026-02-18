@@ -29,6 +29,8 @@
     <p>お支払い方法: 現金のみ、PayPay・クレジットカード等の電子決済はご利用いただけません。</p>
   </div>
 
+  <div class="geolonia" data-lng="{{ info.longitude }}" data-lat="{{ info.latitude }}" data-zoom="16" data-style="geolonia/basic-v2"></div>
+<!--
   <script>
     // Alpine の初期化イベントを待つ
     function initMapComponent() {
@@ -73,7 +75,6 @@
       document.addEventListener('alpine:init', initMapComponent);
     }
   </script>
-  <!-- Leaflet.js Map Container -->
   <div
     x-data="mapComponent()"
     x-init="initMap()"
@@ -86,7 +87,7 @@
     data-city="{{ info.address.city }}"
     data-street="{{ info.address.street }}"
   ></div>
-
+  -->
   <div>
     <p>
       <a
