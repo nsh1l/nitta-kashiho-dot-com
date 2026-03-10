@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: bun install
       - name: Build Site
-        run: bun deploy
+        run: bun run deploy
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         with:
