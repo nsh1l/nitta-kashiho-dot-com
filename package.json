@@ -23,8 +23,8 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "build:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --minify",
-    "build:prod": "bun run build:css && eleventy --incremental",
-    "start": "bun run build:css && eleventy --serve --incremental"
+    "build": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css && eleventy --incremental",
+    "deploy": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css && eleventy",
+    "serve": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch && eleventy --serve"
   }
 }
