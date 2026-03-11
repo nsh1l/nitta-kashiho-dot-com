@@ -10,6 +10,7 @@
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/bun": "latest",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.8.0",
@@ -23,8 +24,11 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "build": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css && eleventy --incremental",
-    "deploy": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css && eleventy",
-    "serve": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch && eleventy --serve"
+    "build:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css",
+    "serve:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch",
+    "build:site": "eleventy",
+    "serve:site": "eleventy --serve",
+    "deploy": "bun run-s build:css build:site",
+    "serve": "bun run-p serve:css serve:site"
   }
 }
