@@ -1,9 +1,9 @@
 <section class="px-4 py-12">
   <h2 class="mb-6 text-xl font-semibold">商品</h2>
 
-  <div class="columns-2 md:columns-4 gap-4 space-y-4">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 space-y-4">
     {% for product in products.product %}
-      <div class="flex flex-col pb-2 shadow-lg rounded-lg overflow-hidden">
+      <div class="grid grid-row-3 pb-2 shadow-lg rounded-lg overflow-hidden">
         <div class="relative w-full overflow-hidden">
           <img
             x-data="image"
