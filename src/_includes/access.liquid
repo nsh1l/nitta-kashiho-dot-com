@@ -11,7 +11,7 @@
     <p>「上長田郵便局」すぐ隣</p>
     <p>駐車場: あり (5台)</p>
   </div>
-
+  <img src="./src/assets/img/hq.jpg"
   <div class="mb-4 text-sm leading-relaxed">
     <p>
       電話番号:
@@ -78,7 +78,7 @@
     x-data="mapComponent()"
     x-init="initMap()"
     id="map"
-    class="h-64 sm:h-96 w-full md:w-3xl mb-4"
+    class="h-64 sm:h-96 md:w-3xl m-4"
     data-lat="{{ info.latitude }}"
     data-lng="{{ info.longitude }}"
     data-company="{{ info.companyName }}"
@@ -92,7 +92,7 @@
         href="https://maps.app.goo.gl/esp86D2EaypwqxibA"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-blue-600 underline after:content-['_↗']"
+        class="p-4 text-blue-600 underline after:content-['_↗']"
       >
         Google Mapsで見る
       </a>
