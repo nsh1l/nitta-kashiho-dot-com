@@ -26,6 +26,6 @@
     "build:site": "eleventy",
     "serve:site": "eleventy --serve",
     "deploy": "bun run-s build:css build:site",
-    "serve": "bun run-p serve:css serve:site"
+    "serve": "git lfs checkout && bun run-p serve:css serve:site"
   }
 }
