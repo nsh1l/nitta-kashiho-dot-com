@@ -1,4 +1,8 @@
 {
+  "name": "nk-com",
+  "version": "1.0.0",
+  "description": "新田菓子舗 公式サイト",
+  "private": true,
   "dependencies": {
     "kiso.css": "^1.2.4",
     "animejs": "^4.3.4"
@@ -9,23 +13,16 @@
     "@shopify/prettier-plugin-liquid": "^1.10.0",
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/postcss": "^4.1.18",
-    "@types/bun": "latest",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
     "prettier": "^3.8.0",
     "prettier-plugin-jinja-template": "^2.1.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "yaml": "^2.8.2"
   },
-  "name": "kashiho-renew",
-  "private": true,
-  "peerDependencies": {
-    "typescript": "^5.9.3"
-  },
   "scripts": {
-    "build:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css",
-    "serve:css": "bun run tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch",
+    "build:css": "tailwindcss -i ./src/global.css -o ./src/assets/css/global.css",
+    "serve:css": "tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch",
     "build:site": "eleventy",
     "serve:site": "eleventy --serve",
     "deploy": "bun run-s build:css build:site",

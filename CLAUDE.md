@@ -1,106 +1,34 @@
+# CLAUDE.md
 
-Default to using Bun instead of Node.js.
+This project uses Bun as a package manager and build tool. Eleventy handles the static site generation.
 
-- Use `bun <file>` instead of `node <file>` or `ts-node <file>`
-- Use `bun test` instead of `jest` or `vitest`
-- Use `bun build <file.html|file.ts|file.css>` instead of `webpack` or `esbuild`
-- Use `bun install` instead of `npm install` or `yarn install` or `pnpm install`
-- Use `bun run <script>` instead of `npm run <script>` or `yarn run <script>` or `pnpm run <script>`
-- Use `bunx <package> <command>` instead of `npx <package> <command>`
-- Bun automatically loads .env, so don't use dotenv.
+## Build Commands
 
-## APIs
-
-- `Bun.serve()` supports WebSockets, HTTPS, and routes. Don't use `express`.
-- `bun:sqlite` for SQLite. Don't use `better-sqlite3`.
-- `Bun.redis` for Redis. Don't use `ioredis`.
-- `Bun.sql` for Postgres. Don't use `pg` or `postgres.js`.
-- `WebSocket` is built-in. Don't use `ws`.
-- Prefer `Bun.file` over `node:fs`'s readFile/writeFile
-- Bun.$`ls` instead of execa.
-
-## Testing
-
-Use `bun test` to run tests.
-
-```ts#index.test.ts
-import { test, expect } from "bun:test";
-
-test("hello world", () => {
-  expect(1).toBe(1);
-});
+```bash
+bun install              # Install dependencies
+bun run deploy           # Build CSS + generate site
+bun run serve            # Start dev server with live reload
+bunx prettier --write .  # Format all files
 ```
 
-## Frontend
+## Key Tools
 
-Use HTML imports with `Bun.serve()`. Don't use `vite`. HTML imports fully support React, CSS, Tailwind.
+- **Bun**: Package manager and runtime
+- **Eleventy (11ty)**: Static site generator
+- **Tailwind CSS v4**: Styling (via `@tailwindcss/postcss`)
+- **Prettier**: Code formatting with Liquid/Jinja plugins
 
-Server:
+## Development Workflow
 
-```ts#index.ts
-import index from "./index.html"
+1. Edit templates in `src/` (`.liquid`, `.njk`, `.md`)
+2. Edit data in `src/_data/` (`.yaml`)
+3. Run `bun run serve` for live preview
+4. Run `bun run deploy` before committing
 
-Bun.serve({
-  routes: {
-    "/": index,
-    "/api/users/:id": {
-      GET: (req) => {
-        return new Response(JSON.stringify({ id: req.params.id }));
-      },
-    },
-  },
-  // optional websocket support
-  websocket: {
-    open: (ws) => {
-      ws.send("Hello, world!");
-    },
-    message: (ws, message) => {
-      ws.send(message);
-    },
-    close: (ws) => {
-      // handle close
-    }
-  },
-  development: {
-    hmr: true,
-    console: true,
-  }
-})
-```
+## Tailwind CSS
 
-HTML files can import .tsx, .jsx or .js files directly and Bun's bundler will transpile & bundle automatically. `<link>` tags can point to stylesheets and Bun's CSS bundler will bundle.
+Tailwind v4 is configured via PostCSS in `postcss.config.mjs`. Custom colors from `DESIGN.md` are available as CSS variables.
 
-```html#index.html
-<html>
-  <body>
-    <h1>Hello, world!</h1>
-    <script type="module" src="./frontend.tsx"></script>
-  </body>
-</html>
-```
+## Static Assets
 
-With the following `frontend.tsx`:
-
-```tsx#frontend.tsx
-import React from "react";
-import { createRoot } from "react-dom/client";
-
-// import .css files directly and it works
-import './index.css';
-
-const root = createRoot(document.body);
-
-export default function Frontend() {
-  return <h1>Hello, world!</h1>;
-}
-
-root.render(<Frontend />);
-```
-
-Then, run index.ts
-
-```sh
-bun --hot ./index.ts
-```
-
-For more information, read the Bun API docs in `node_modules/bun-types/docs/**.mdx`.
+Place images in `src/assets/img/`. Eleventy copies the entire `src/assets/` directory to `_site/`.

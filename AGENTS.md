@@ -11,13 +11,11 @@ This is an Eleventy (11ty) static site generator project for "新田菓子舗" (
 ## Build Commands
 
 ```bash
-bun install                          # Install dependencies
-bun run build:css                    # Build CSS only
-bun run build:prod                   # Build for production (CSS + Eleventy)
-bun run start                        # Start dev server with live reload
-bun test                             # Run tests (if configured)
-bun test <file-name>.test.ts         # Run a single test file
-bunx prettier --write .              # Format all files
+bun install              # Install dependencies
+bun run build:css        # Build CSS only
+bun run deploy           # Build for production (CSS + Eleventy)
+bun run serve            # Start dev server with live reload
+bunx prettier --write .  # Format all files
 ```
 
 ## Code Style
@@ -31,12 +29,6 @@ bunx prettier --write .              # Format all files
 
 - Use Prettier for all code formatting (configured with Tailwind, Liquid, Jinja plugins)
 - Run `bunx prettier --write .` to format the entire project
-
-### TypeScript
-
-- Strict mode enabled with `noUncheckedIndexedAccess`
-- Avoid `any`; use `unknown` or specific types
-- Use interfaces for object shapes, types for unions/primitives
 
 ### Naming Conventions
 
@@ -97,7 +89,6 @@ _site/              # Generated static site output
 assets/             # Copied to _site/ as passthrough
 eleventy.config.mjs # Eleventy configuration
 postcss.config.mjs  # Tailwind PostCSS config
-tsconfig.json       # TypeScript configuration
 .prettierrc         # Prettier configuration
 ```
 
@@ -106,16 +97,10 @@ tsconfig.json       # TypeScript configuration
 - `eleventy.config.mjs`: Input/output dirs, passthrough copies, YAML parsing
 - `postcss.config.mjs`: Tailwind PostCSS plugin
 - `.prettierrc`: Prettier with Tailwind, Liquid, Jinja plugins
-- `tsconfig.json`: Strict TypeScript with DOM/ESNext
 
 ## Testing
 
-No tests currently configured. If adding tests:
-
-- Use `bun test` for Bun's built-in test runner
-- Place tests alongside source files with `.test.ts` extension
-- Use `bun test <file-name>.test.ts` to run a single test file
-- Mock Eleventy/11ty APIs when testing transforms or filters
+No tests currently configured.
 
 ## Common Tasks
 
