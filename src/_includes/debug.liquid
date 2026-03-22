@@ -1,0 +1,13 @@
+<section class="bg-gray-900 px-4 py-8 text-xs text-gray-100 flex justify-center">
+  <details class="max-w-screen-md w-full">
+    <summary class="cursor-pointer select-none font-medium text-gray-400 hover:text-gray-600">Debug Info</summary>
+    <dl class="mt-4 grid grid-cols-2 gap-2 text-left">
+      <dt class="font-medium text-gray-600">Runtime:</dt>
+      <dd>{% runtime %}</dd>
+      <dt class="font-medium text-gray-600">Generator:</dt>
+      <dd>{{ eleventy.generator }}</dd>
+      <dt class="font-medium text-gray-600">Environment:</dt>
+      <dd>{{ eleventy.env.runMode }}</dd>
+    </dl>
+  </details>
+</section>
