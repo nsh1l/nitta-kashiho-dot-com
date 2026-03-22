@@ -18,13 +18,13 @@
 
 ```bash
 # Install dependencies
-bun install
+bun i
 
 # Start development server (CSS watch + Eleventy serve)
-bun run start
+bun run serve
 
 # Build for production
-bun run build:css && bun run build:site
+bun run deploy
 ```
 
 > [!NOTE]
