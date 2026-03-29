@@ -1,0 +1,44 @@
+shop:
+    - id: _blank
+      name: 
+      address:
+          zip:
+          pref:
+          city:
+          street:
+      openDays:
+      businessHours:
+          Open:
+          Closed:
+      latitude: !!float 35.
+      longtitude: !!float 133.
+      link:
+    - id: hkcenter
+      name: ヒルゼン高原センター
+      address:
+          zip: 717-0602
+          pref: 岡山県
+          city: 真庭市
+          street: 蒜山上福田1205-197
+      openDays: 不定休
+      businessHours:
+          Open: 9:00
+          Closed: 16:30
+      latitude: !!float 35.291211
+      longtitude: !!float 133.635202
+      link: https://www.hkcenter.co.jp/
+    - id: mikamo
+      name: みかもストアー
+      address:
+          zip: 717-0505
+          pref: 岡山県
+          city: 真庭市
+          street: 蒜山上長田448-5
+      openDays: 不定休
+      businessHours:
+          Open: 9:00
+          Closed: 19:00
+      latitude: !!float 35.283528
+      longtitude: !!float 133.695591
+      link: https://mikamostore.net/
+          
