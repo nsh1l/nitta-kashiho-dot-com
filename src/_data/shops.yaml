@@ -1,18 +1,18 @@
 shop:
-    - id: _blank
-      name: 
-      address:
-          zip:
-          pref:
-          city:
-          street:
-      openDays:
-      businessHours:
-          Open:
-          Closed:
-      latitude: !!float 35.
-      longtitude: !!float 133.
-      link:
+    # - id: _blank
+    #   name: 
+    #   address:
+    #       zip:
+    #       pref:
+    #       city:
+    #       street:
+    #   openDays:
+    #   businessHours:
+    #       Open:
+    #       Closed:
+    #   latitude: !!float 35.
+    #   longtitude: !!float 133.
+    #   link:
     - id: hkcenter
       name: ヒルゼン高原センター
       address:

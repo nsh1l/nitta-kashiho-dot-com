@@ -1,0 +1,19 @@
+---
+title: お取り扱い店
+layout: docs
+
+---
+<h1>{{ title }}</h1>
+
+<section>
+  {% for shop in shops.shop %}
+    <h2>{{ shop.name }}</h2>
+    <address>
+      <p>
+        {{ shop.address.pref -}}
+        {{- shop.address.city }}
+        {{- shop.address.street }}
+      </p>
+    </address>
+  {% endfor %}
+</section>
