@@ -89,7 +89,15 @@ product:
     description: >
       新鮮なたまごと蜂蜜を練り込んだ生地に、焼成後にもはちみつを塗り込んで作ったしっとりケーキです。
     image: "assets/img/hachimitsu.jpg"
-
+  - id: yukino
+    name: 雪乃ロール
+    variant:
+      - piece: 1
+        unit: 本
+        price: NaN
+    description: >
+      卵黄ひかえめの生地にたっぷりの生クリームをサンドしたロールケーキ｡蒜山高原SA下り線限定商品です｡
+    image: "assets/img/yukino.jpg"
 discontinued:
   - id: nyuka
     name: 蒜山乳菓
