@@ -1,23 +1,23 @@
 <section class="px-4 py-12 max-w-5xl mx-auto">
-  <h2 class="mb-6 text-xl font-semibold text-center">商品</h2>
+  <h2 class="mb-8 text-2xl font-semibold text-center">商品</h2>
 
   {% assign grouped = products.product | group_by: "category" %}
 
   {% for group in grouped %}
-    <div class="grid grid-cols-[3rem_1fr] gap-3 mb-10 last:mb-0">
+    <div class="grid grid-cols-[4rem_1fr] gap-4 mb-12 last:mb-0">
 
       <!-- カテゴリ名（縦書き） -->
-      <div class="flex items-start justify-center pt-1">
-        <span class="text-xs font-medium text-gray-400 tracking-widest writing-vertical-rl">
+      <div class="flex items-start justify-center pt-2">
+        <span class="text-sm font-medium text-gray-400 tracking-widest writing-vertical-rl">
           {{ group.name }}
         </span>
       </div>
 
       <!-- 商品カード 2カラム -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {% for item in group.items %}
-          <div class="flex flex-col bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
-            <div class="aspect-[5/3] overflow-hidden bg-gray-50">
+          <div class="flex flex-col bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="aspect-[4/3] overflow-hidden bg-gray-50">
               <img
                 x-data="image"
                 x-bind:onerror="handleError"
@@ -27,16 +27,16 @@
                 loading="lazy"
               >
             </div>
-            <div class="flex flex-col justify-between p-2">
+            <div class="flex flex-col justify-between p-3">
               <div>
-                <h4 class="text-xs font-medium text-gray-900 mb-0.5">{{ item.name }}</h4>
+                <h4 class="text-sm font-medium text-gray-900 mb-1">{{ item.name }}</h4>
                 {% for variant in item.variant %}
-                  <span class="text-[10px] tabular-nums text-gray-500">
+                  <span class="text-xs tabular-nums text-gray-500">
                     {{ variant.price -}} 円 / {{ variant.piece -}}{{ variant.unit }}
                   </span>
                 {% endfor %}
               </div>
-              <p class="text-[10px] text-gray-400 mt-1.5 leading-relaxed line-clamp-2">{{ item.description }}</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">{{ item.description }}</p>
             </div>
           </div>
         {% endfor %}
