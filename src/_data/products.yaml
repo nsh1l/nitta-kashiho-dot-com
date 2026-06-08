@@ -1,40 +1,44 @@
 product:
   - id: koban
     name: チーズケーキ
+    category: 洋菓子
     variant:
       - piece: 10
         unit: 個入
-        price: 840
+        price: 920
     description: >
       ソフトでマイルドな味覚。クリームチーズをたっぷり使って焼いてます。サイズも食べやすい大きさになってます。お子様にも大人気！
     image: "assets/img/koban.jpg"
 
   - id: sabre
     name: 牛乳サブレー
+    category: 洋菓子
     variant:
       - piece: 10
-        unit: 個入
-        price: 740
+        unit: 枚入
+        price: 810
       - piece: 20
-        unit: 個入
-        price: 1480
+        unit: 枚入
+        price: 1380
     description: >
       牛乳と卵をたっぷり使った歯ごたえのあるサブレー。かわいい子牛を型どってます。お口の中にミルクの味がひろがります。
     image: "assets/img/sable.jpg"
   - id: caramel
     name: 牛乳キャラメルクッキー
+    category: 洋菓子
     variant:
-      - piece: 12
-        unit: 個入
-        price: 780
+      - piece: 10
+        unit: 枚入
+        price: 865
     description: >
       キャラメル味のホワイトチョコをくるんだ、やわらかい食感のソフトクッキー。お子様から大人まで人気の商品です。
     image: "assets/img/caramel.jpg"
   - id: tsubu
     name: 手作りつぶクッキー
+    category: 洋菓子
     variant:
       - piece: 110
-        unit: グラム
+        unit: g
         price: 400
     description: >
       お茶うけやちょっとしたおやつに、サクサクのこつぶクッキー。
@@ -42,6 +46,7 @@ product:
     image: "assets/img/tsubu.jpg"
   - id: cheeseCake
     name: 蒜山ジャージーチーズケーキ
+    category: チーズケーキ
     variant:
       - piece: 12
         unit: cm
@@ -51,6 +56,7 @@ product:
     image: "assets/img/butterCake.jpg"
   - id: chocoCake
     name: チョコレートケーキ
+    category: チーズケーキ
     variant:
       - piece: 12
         unit: cm
@@ -60,6 +66,7 @@ product:
     image: "assets/img/chocoCake.jpg"
   - id: manju
     name: ヒルゼン高原まんじゅう
+    category: 和菓子
     variant:
       - piece: 10
         unit: 個入
@@ -72,9 +79,10 @@ product:
     image: "assets/img/manju.jpg"
   - id: souffle
     name: 蒜山スフレチーズケーキ
+    category: チーズケーキ
     variant:
-      - piece: 15
-        unit: cm
+      - piece: "5.5"
+        unit: 号
         price: 1700
     description: >
       3種類のたっぷりのクリームチーズと蒜山高原特産のジャージー牛乳を使って、じっくりと焼き上げて作った手作りのチーズケーキです。
@@ -82,31 +90,48 @@ product:
     image: "assets/img/souffle.jpg"
   - id: hachimitsu
     name: 黄金はちみつケーキ
+    category: 洋菓子
     variant:
       - piece: 18
         unit: cm
-        price: 1400
+        price: 1460
     description: >
       新鮮なたまごと蜂蜜を練り込んだ生地に、焼成後にもはちみつを塗り込んで作ったしっとりケーキです。
     image: "assets/img/hachimitsu.jpg"
   - id: yukino
     name: 雪乃ロール
+    category: 洋菓子
     variant:
       - piece: 1
         unit: 本
-        price: NaN
+        price: 1800
     description: >
       卵黄ひかえめの生地にたっぷりの生クリームをサンドしたロールケーキ｡蒜山高原SA下り線限定商品です｡
     image: "assets/img/yukino.jpg"
 discontinued:
+  # 和菓子
   - id: nyuka
     name: 蒜山乳菓
-    image: "assets/img/nyuka.jpg"
-  - id: ame
-    name: 蒜山キャンディー
-    price: 500
-    description: >
-      蒜山の自然な甘さを活かした手作りキャンディーです。お子様から大人まで楽しめる一品です。
-    image: "assets/img/sweets/milk-ame.jpg"
+    category: 和菓子
 
-  - id: nyuuka
+  # チョコレート
+  - id: whitechoco
+    name: ホワイト・チョコ
+    category: チョコレート
+
+  - id: platechoco
+    name: 板チョコ詰め合わせ
+    category: チョコレート
+
+  - id: jerseychoco
+    name: ジャージーチョコ
+    category: チョコレート
+
+  # 飴
+  - id: milkame
+    name: 牛乳あめ
+    category: 飴
+
+  - id: butterame
+    name: バターあめ
+    category: 飴
