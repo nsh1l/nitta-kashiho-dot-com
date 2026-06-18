@@ -1,0 +1,25 @@
+--- 
+permalink: sitemap.xml
+layout: null
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+{%-   if page.url != "/404.html" and page.url and page.url != "/" %}{# skip 404, empty, root is added explicitly #}
+  <url>
+    <loc>{{ info.siteUrl }}{{ page.url | url }}</loc>
+    <lastmod>{{ page.date | dateToRfc3339 }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{%-   elif page.url == "/" %}
+  <url>
+    <loc>{{ info.siteUrl }}/</loc>
+    <lastmod>{{ page.date | dateToRfc3339 }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+{%-   endif %}
+{%- endfor %}
+</urlset>

@@ -43,4 +43,9 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("webp", (path) => path.replace(/\.(jpg|jpeg|png)$/i, ".webp"));
+
+  eleventyConfig.addFilter("dateToRfc3339", (date) => {
+    if (!date) return new Date().toISOString();
+    return date instanceof Date ? date.toISOString() : new Date(date).toISOString();
+  });
 }
