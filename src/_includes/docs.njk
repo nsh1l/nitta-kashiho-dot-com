@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="{{ eleventy.generator }}" />
+    <meta name="description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta property="og:title" content="{{ title }} - ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta property="og:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
+    <meta property="og:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title }} - ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta name="twitter:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
+    <meta name="twitter:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+
     <title>{{ title }} - ヒルゼンのお菓子屋 新田菓子舗</title>
+
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link
       rel="stylesheet"
@@ -13,8 +31,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/jpg" href="/assets/img/ushi_cyan.jpg" />
-    <!-- Alpine.js（defer を削除して同期読み込み） -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine.js -->
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="/assets/js/img-onerror.mjs" type="module"></script>
 
   </head>
 

@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="{{ eleventy.generator }}" />
-    <title>ヒルゼンのお菓子屋 新田菓子舗</title>
+    <meta name="description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。チーズケーキ、サブレ、まんじゅうなど、ジャージー牛乳たっぷりの手作りお菓子をお届けします。' }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta property="og:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
+    <meta property="og:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗" />
+    <meta name="twitter:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
+    <meta name="twitter:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+
+    <title>{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗</title>
+
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link
       rel="stylesheet"
@@ -14,29 +32,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/jpg" href="/assets/img/ushi_cyan.jpg" />
 
-    <!-- Leaflet.js CSS -->
+    {% if hasMap %}
+    <!-- Leaflet.js -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-
-    <!-- Leaflet.js JS -->
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    {% endif %}
 
-    <!-- Alpine.js（defer を削除して同期読み込み） -->
+    <!-- Alpine.js -->
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
+    <script src="/assets/js/img-onerror.mjs" type="module"></script>
+
   </head>
 
   <body>
     {{ content | safe }}
     {% include 'footer.liquid' %}
-    {% include 'debug.liquid' %}
+    {% if eleventy.env.runMode == "serve" %}
+      {% include 'debug.liquid' %}
+    {% endif %}
   </body>
 </html>
