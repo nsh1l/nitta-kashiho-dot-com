@@ -1,5 +1,6 @@
 companyName: "有限会社 新田菓子舗"
 tel: "0867-66-2116"
+email: "contact@nitta-kashiho.com"
 address:
   zip: 717-0505
   pref: 岡山県
@@ -10,3 +11,4 @@ businessHours: "8:00 - 19:00"
 shopName: "ヒルゼンのお菓子屋 新田菓子舗"
 latitude: !!float 35.284025
 longitude: !!float 133.6967223
+heroImage: "assets/img/souffle.jpg"

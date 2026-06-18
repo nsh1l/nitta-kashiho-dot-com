@@ -3,12 +3,15 @@
 
   <p class="mb-4 text-sm text-gray-700"></p>
   <div class="grid grid-cols-1 gap-4">
-    <img
-      x-data="image"
-      x-bind:onerror="handleError"
-      src="/assets/img/oempop.jpg"
-      class="aspect-auto w-lg object-cover"
-      loading="lazy"
-    >
+    <picture>
+      <source srcset="assets/img/oempop.webp" type="image/webp">
+      <img
+        x-data="image"
+        x-bind:onerror="handleError"
+        src="assets/img/oempop.jpg"
+        class="aspect-auto w-lg object-cover"
+        loading="lazy"
+      >
+    </picture>
   </div>
 </section>

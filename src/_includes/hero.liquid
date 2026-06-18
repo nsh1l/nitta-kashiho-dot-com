@@ -1,13 +1,16 @@
 <section class="w-full">
   <div class="relative">
-    <img
-      x-data="image"
-      x-bind:onerror="handleError"
-      src="/assets/img/souffle.jpg"
-      alt="ヒーロー画像"
-      loading="lazy"
-      class="h-[80vh] w-full object-cover"
-    >
+    <picture>
+      <source srcset="/{{ info.heroImage | webp }}" type="image/webp">
+      <img
+        x-data="image"
+        x-bind:onerror="handleError"
+        src="/{{ info.heroImage }}"
+        alt="ヒーロー画像"
+        loading="lazy"
+        class="h-[80vh] w-full object-cover"
+      >
+    </picture>
     <h1
       class="
         absolute bottom-32 whitespace-normal text-shadow-lg text-shadow-slate-50 backdrop-blur-xs px-4 py-2
