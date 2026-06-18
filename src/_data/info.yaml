@@ -12,4 +12,4 @@ shopName: "ヒルゼンのお菓子屋 新田菓子舗"
 latitude: !!float 35.284025
 longitude: !!float 133.6967223
 heroImage: "assets/img/souffle.jpg"
-siteUrl: "https://nitta-kashiho.com"
+siteUrl: "https://dev.nitta-kashiho.com"
