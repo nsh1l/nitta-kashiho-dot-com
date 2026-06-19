@@ -34,7 +34,18 @@
                   </div>
                 {% endfor %}
               </div>
-              <p class="text-xs text-gray-500 mt-2 leading-relaxed line-clamp-3">{{ item.description }}</p>
+              <div x-data="{ expanded: false }" class="mt-2">
+                <p
+                  :class="expanded ? '' : 'line-clamp-3'"
+                  @click="expanded = !expanded"
+                  class="text-xs text-gray-500 leading-relaxed cursor-pointer select-none"
+                >{{ item.description }}</p>
+                <button
+                  @click="expanded = !expanded"
+                  class="text-[10px] text-gray-400 hover:text-gray-600 mt-0.5 cursor-pointer"
+                  x-text="expanded ? '閉じる ▲' : 'もっと見る ▼'"
+                ></button>
+              </div>
             </div>
           </div>
         {% endfor %}
