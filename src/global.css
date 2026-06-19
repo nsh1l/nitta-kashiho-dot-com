@@ -81,15 +81,44 @@
   }
 
   .document-container {
-    @apply mx-auto flex max-w-3xl flex-col items-start p-4;
+    @apply mx-auto grid max-w-5xl gap-6 px-4 py-6;
+    grid-template-columns: minmax(3rem, 5.5rem) minmax(0, 1fr);
   }
-  .document-container h1 {
-    @apply mb-4 text-3xl font-semibold text-wrap text-gray-900;
+  .document-title-column {
+    @apply flex items-center justify-center;
   }
-  .document-container h2 {
-    @apply text-2xl font-bold;
+  .document-title {
+    @apply text-base font-semibold text-gray-900;
+    letter-spacing: 0.35em;
+    text-orientation: mixed;
   }
-  .document-container p {
+  .document-body {
+    @apply max-w-4xl;
+  }
+  .document-body-inner {
+    @apply space-y-4;
+  }
+  .document-body h1:first-of-type {
+    @apply hidden;
+  }
+  .document-body h2 {
+    @apply text-2xl font-bold leading-tight;
+  }
+  .document-body p {
     @apply my-4 leading-relaxed;
+  }
+  .document-body ul,
+  .document-body ol {
+    @apply ml-4 list-disc space-y-2;
+  }
+  @media (max-width: 768px) {
+    .document-container {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    .document-title {
+      writing-mode: horizontal-tb;
+      letter-spacing: 0.1em;
+    }
   }
 }

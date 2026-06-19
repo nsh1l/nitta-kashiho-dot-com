@@ -42,7 +42,16 @@
   </head>
 
   <body>
-    <section class="grid document-container">{{ content | safe }}</section>
+    <section class="document-container">
+      <div class="document-title-column">
+        <h1 class="document-title writing-vertical-rl">{{ title }}</h1>
+      </div>
+      <article class="document-body" aria-label="{{ title }}の本文">
+        <div class="document-body-inner">
+          {{ content | safe }}
+        </div>
+      </article>
+    </section>
     <div class="flex justify-center mx-auto p-2">
       <a href="/" class="bg-gray-900 p-4 text-center text-white">
         トップページへ戻る
