@@ -82,7 +82,8 @@
 
                 L.marker([lat, lng]).addTo(map).bindPopup(`${company}<br>${pref} ${city} ${street}`).openPopup();
 
-                console.log('Map initialized successfully');
+                requestAnimationFrame(() => map.invalidateSize());
+                window.addEventListener('resize', () => map.invalidateSize());
               } catch (error) {
                 console.error('Map initialization error:', error);
               }
@@ -99,7 +100,7 @@
 
     <div
       id="map"
-      class="col-span-full h-80 md:h-96"
+      class="leaflet-container col-span-full aspect-square md:aspect-[3/2]"
       x-data="mapComponent()"
       x-init="initMap()"
       data-lat="{{ info.latitude }}"

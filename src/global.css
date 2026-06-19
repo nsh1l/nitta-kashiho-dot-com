@@ -111,6 +111,11 @@
   .document-body ol {
     @apply ml-4 list-disc space-y-2;
   }
+  .leaflet-container {
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
   @media (max-width: 768px) {
     .document-container {
       grid-template-columns: minmax(0, 1fr);
