@@ -34,15 +34,17 @@
                   </div>
                 {% endfor %}
               </div>
-              <div x-data="{ expanded: false }" class="mt-2">
+              <div x-data="{ expanded: false, needsToggle: true }" class="mt-2">
                 <div
-                  @click="expanded = !expanded"
+                  x-init="$nextTick(() => { $nextTick(() => { needsToggle = $el.scrollHeight > $el.clientHeight; }) })"
+                  @click="needsToggle && (expanded = !expanded)"
                   class="overflow-hidden transition-all duration-500 ease-in-out cursor-pointer select-none"
                   :style="expanded ? 'max-height: 300px; opacity: 1;' : 'max-height: 3.5em; opacity: 0.7;'"
                 >
                   <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
                 </div>
                 <button
+                  x-show="needsToggle"
                   @click="expanded = !expanded"
                   class="text-[10px] text-gray-400 hover:text-gray-600 mt-0.5 cursor-pointer transition-opacity duration-300"
                   :style="expanded ? 'opacity: 1;' : 'opacity: 0.7;'"
