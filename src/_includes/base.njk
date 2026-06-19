@@ -33,23 +33,26 @@
     <link rel="icon" type="image/jpg" href="/assets/img/ushi_cyan.jpg" />
 
     {% if hasMap %}
-    <!-- Leaflet.js -->
+    <!-- MapLibre GL JS -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css"
+      integrity="sha256-3cWW8McHHD5X4ZUBJvyDGB7STSh4R6MuG7TI9grQ5xs="
       crossorigin=""
     />
     <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js"
+      integrity="sha256-OIstL0CL13Va9GBGaJRnfDzYtvI7i1KqSR5Lb0e8CBM="
       crossorigin=""
     ></script>
     {% endif %}
 
     <!-- Alpine.js -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="{{ env.siteUrl }}/assets/js/img-onerror.mjs" type="module"></script>
+    {% if hasMap %}
+    <script src="{{ env.siteUrl }}/assets/js/map.mjs" type="module"></script>
+    {% endif %}
 
   </head>
 

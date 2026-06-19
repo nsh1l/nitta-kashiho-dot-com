@@ -115,6 +115,13 @@
     overflow: hidden;
     border-radius: 0.5rem;
   }
+  /* MapLibre GL JS overrides */
+  .maplibregl-popup-content {
+    @apply text-sm leading-snug;
+  }
+  .maplibregl-popup-content strong {
+    @apply block text-base font-semibold;
+  }
 
   @media (max-width: 768px) {
     .document-container {
