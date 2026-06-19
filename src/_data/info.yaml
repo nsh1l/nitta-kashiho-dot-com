@@ -11,5 +11,5 @@ businessHours: "8:00 - 19:00"
 shopName: "ヒルゼンのお菓子屋 新田菓子舗"
 latitude: !!float 35.284025
 longitude: !!float 133.6967223
-heroImage: "assets/img/souffle_2.jpg"
+heroImage: "assets/img/souffle.jpg"
 siteUrl: "https://dev.nitta-kashiho.com"
