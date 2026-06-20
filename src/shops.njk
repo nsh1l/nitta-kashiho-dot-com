@@ -1,0 +1,65 @@
+---
+title: 販売店のご案内
+layout: docs
+---
+
+<div class="space-y-12">
+  <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+    新田菓子舗のお菓子は、以下の直営販売所および蒜山高原の各観光スポット・サービスエリアにてお買い求めいただけます。蒜山高原へお越しの際は、ぜひお立ち寄りください。
+  </p>
+
+  <div class="space-y-10">
+    {% for shop in shops.shops %}
+      <div class="border-b border-gray-100 pb-10 last:border-0 last:pb-0">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div class="flex items-center gap-3">
+            <h2 class="text-xl font-bold text-gray-900">{{ shop.name }}</h2>
+            <span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-md border {% if shop.category == '直営店' %}border-amber-200 bg-amber-50 text-amber-800{% else %}border-gray-200 bg-gray-50 text-gray-600{% endif %}">
+              {{ shop.category }}
+            </span>
+          </div>
+          {% if shop.badge %}
+            <span class="inline-block self-start sm:self-auto text-xs px-2.5 py-1 font-medium text-gray-500 bg-slate-50 rounded-full border border-slate-100">
+              {{ shop.badge }}
+            </span>
+          {% endif %}
+        </div>
+
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
+          {{ shop.description }}
+        </p>
+
+        <div class="bg-gray-50 rounded-xl p-5 border border-gray-100 text-sm md:text-base">
+          <dl class="grid grid-cols-1 sm:grid-cols-4 gap-x-4 gap-y-3">
+            <dt class="font-medium text-gray-500">所在地</dt>
+            <dd class="sm:col-span-3 text-gray-900 flex flex-col sm:flex-row sm:items-center gap-2">
+              <span>{{ shop.address }}</span>
+              {% if shop.mapUrl %}
+                <a href="{{ shop.mapUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-600 hover:underline gap-1">
+                  地図を見る ↗
+                </a>
+              {% endif %}
+            </dd>
+
+            {% if shop.tel %}
+              <dt class="font-medium text-gray-500">お電話</dt>
+              <dd class="sm:col-span-3 text-gray-900">
+                <a href="tel:{{ shop.tel }}" class="hover:underline text-blue-600 sm:text-gray-900 sm:no-underline">{{ shop.tel }}</a>
+              </dd>
+            {% endif %}
+
+            {% if shop.hours %}
+              <dt class="font-medium text-gray-500">営業時間</dt>
+              <dd class="sm:col-span-3 text-gray-900">{{ shop.hours }}</dd>
+            {% endif %}
+
+            {% if shop.closed %}
+              <dt class="font-medium text-gray-500">定休日</dt>
+              <dd class="sm:col-span-3 text-gray-900">{{ shop.closed }}</dd>
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
