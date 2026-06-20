@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&amp;display=swap');
+      
+      .sub-text {
+        font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Kosugi Maru', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        fill: #556B2F; /* 蒜山をイメージしたオリーブ・グリーン */
+        letter-spacing: 0.35em;
+      }
+      
+      .main-text {
+        font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Kosugi Maru', sans-serif;
+        font-weight: 700;
+        font-size: 52px;
+        fill: #4A3525; /* お菓子の焼き色や大地をイメージした温かみのあるブラウン */
+        letter-spacing: 0.15em;
+      }
+
+      .line-deco {
+        stroke: #556B2F;
+        stroke-width: 2;
+        stroke-linecap: round;
+        opacity: 0.7;
+      }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none"/>
+
+  <g transform="translate(0, 20)">
+    <text x="300" y="70" text-anchor="middle" class="sub-text">ヒルゼンのお菓子屋</text>
+
+    <line x1="120" y1="95" x2="480" y2="95" class="line-deco" />
+
+    <text x="306" y="170" text-anchor="middle" class="main-text">新田菓子舗</text>
+  </g>
+</svg>
+
