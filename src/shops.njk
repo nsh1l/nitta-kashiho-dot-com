@@ -11,6 +11,23 @@ layout: docs
   <div class="space-y-10">
     {% for shop in shops.shops %}
       <div class="border-b border-gray-100 pb-10 last:border-0 last:pb-0">
+        {% if shop.image %}
+          <div class="mb-5 overflow-hidden rounded-xl bg-slate-50 aspect-[16/9] max-h-72 border border-gray-100">
+            <picture>
+              <source srcset="{{ shop.image | webp }}" type="image/webp">
+              <img
+                x-data="image"
+                data-fallback="/assets/img/ushi_cyan.jpg"
+                x-bind:onerror="handleError"
+                src="{{ shop.image }}"
+                alt="{{ shop.name }}"
+                class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"
+                loading="lazy"
+              >
+            </picture>
+          </div>
+        {% endif %}
+
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div class="flex items-center gap-3">
             <h2 class="text-xl font-bold text-gray-900">{{ shop.name }}</h2>

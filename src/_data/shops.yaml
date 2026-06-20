@@ -5,6 +5,7 @@
 shops:
   - name: "新田菓子舗 工場直売所"
     category: "直営店"
+    image: "/assets/img/hq.jpg"
     address: "岡山県真庭市蒜山上長田459-13"
     mapUrl: "https://maps.google.com/?q=新田菓子舗"
     tel: "0867-66-2116"
@@ -15,6 +16,7 @@ shops:
 
   - name: "蒜山高原サービスエリア（下り線）"
     category: "取扱店"
+    image: "/assets/img/shops/hiruzen-sa.jpg"
     address: "岡山県真庭市蒜山西茅部（米子自動車道）"
     mapUrl: "https://maps.google.com/?q=蒜山高原SA+下り"
     description: "米子自動車道の蒜山高原SA（下り線）内ショッピングコーナーです。お土産に最適なスフレチーズケーキや各種サブレなど、旅の途中に手軽にお買い求めいただけます。"
@@ -22,6 +24,7 @@ shops:
 
   - name: "蒜山高原センター・ジョイフルパーク"
     category: "取扱店"
+    image: "/assets/img/shops/hiruzen-center.jpg"
     address: "岡山県真庭市蒜山上福田1205-197"
     mapUrl: "https://maps.google.com/?q=蒜山高原センター"
     hours: "10:00 - 16:30（時期により変動あり）"
@@ -30,6 +33,7 @@ shops:
 
   - name: "道の駅 風の家"
     category: "取扱店"
+    image: "/assets/img/shops/kazenoie.jpg"
     address: "岡山県真庭市蒜山下徳山113-10"
     mapUrl: "https://maps.google.com/?q=道の駅+風の家"
     hours: "8:30 - 16:30（冬期は変動あり）"
@@ -38,6 +42,7 @@ shops:
 
   - name: "道の駅 蒜山高原"
     category: "取扱店"
+    image: "/assets/img/shops/michinoeki-hiruzen.jpg"
     address: "岡山県真庭市蒜山上福田1205-219"
     mapUrl: "https://maps.google.com/?q=道の駅+蒜山高原"
     hours: "9:00 - 17:00"
