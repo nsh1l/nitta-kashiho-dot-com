@@ -11,15 +11,23 @@
         class="h-[80vh] w-full object-cover"
       >
     </picture>
-    <h1
+    <div
       class="
-        absolute bottom-32 whitespace-normal text-shadow-lg text-shadow-slate-50 backdrop-blur-xs px-4 py-2
-        left-6 text-3xl font-bold text-gray-900
+        absolute bottom-32 left-6 max-w-[180px] sm:max-w-[220px]
+        bg-white/90 backdrop-blur-xs p-3 rounded-2xl shadow-lg border border-white/50
+        hover:scale-105 transition-transform duration-300
       "
     >
-      ヒルゼンのお菓子屋 <br>
-      新田菓子舗
-    </h1>
+      <picture>
+        <source srcset="/assets/img/logo.webp" type="image/webp">
+        <img
+          src="/assets/img/logo.jpg"
+          alt="ヒルゼンのお菓子屋 新田菓子舗"
+          class="w-full h-auto rounded-xl"
+        >
+      </picture>
+      <h1 class="sr-only">ヒルゼンのお菓子屋 新田菓子舗</h1>
+    </div>
     <div>
       <p
         class="px-4 bottom-16 left-6 justify-items-center text-sm text-gray-900"
