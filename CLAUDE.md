@@ -32,3 +32,17 @@ Tailwind v4 is configured via PostCSS in `postcss.config.mjs`. Custom colors fro
 ## Static Assets
 
 Place images in `src/assets/img/`. Eleventy copies the entire `src/assets/` directory to `_site/`.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked as GitHub Issues. External PRs are not a triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Five canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root (created lazily). See `docs/agents/domain.md`.
