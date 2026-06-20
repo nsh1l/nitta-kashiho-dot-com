@@ -12,14 +12,15 @@ layout: docs
     {% for shop in shops.shops %}
       <div class="border-b border-gray-100 pb-10 last:border-0 last:pb-0">
         {% if shop.image %}
+          {% set resolvedImage = shop.image | resolveShopImage %}
           <div class="mb-5 overflow-hidden rounded-xl bg-slate-50 aspect-[16/9] max-h-72 border border-gray-100">
             <picture>
-              <source srcset="{{ shop.image | webp }}" type="image/webp">
+              <source srcset="{{ resolvedImage | webp }}" type="image/webp">
               <img
                 x-data="image"
                 data-fallback="/assets/img/ushi_cyan.jpg"
                 x-bind:onerror="handleError"
-                src="{{ shop.image }}"
+                src="{{ resolvedImage }}"
                 alt="{{ shop.name }}"
                 class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"

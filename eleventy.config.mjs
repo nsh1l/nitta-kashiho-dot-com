@@ -1,5 +1,7 @@
 import YAML from "yaml";
 import markdown from "markdown-it";
+import fs from "fs";
+import path from "path";
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
@@ -43,6 +45,15 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("webp", (path) => path.replace(/\.(jpg|jpeg|png)$/i, ".webp"));
+
+  eleventyConfig.addFilter("resolveShopImage", (imgPath) => {
+    if (!imgPath) return "/assets/img/ushi_cyan.jpg";
+    const fullPath = path.join("src", imgPath);
+    if (fs.existsSync(fullPath)) {
+      return imgPath;
+    }
+    return "/assets/img/ushi_cyan.jpg";
+  });
 
   eleventyConfig.addFilter("dateToRfc3339", (date) => {
     if (!date) return new Date().toISOString();
