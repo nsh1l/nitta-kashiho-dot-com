@@ -86,14 +86,19 @@
                   zoom: 14,
                 });
 
-                const popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+                const popup = new maplibregl.Popup({
+                  closeButton: false,
+                  closeOnClick: false,
+                  offset: 25
+                }).setHTML(
                   '<strong>' + company + '</strong><br>' + pref + ' ' + city + ' ' + street
                 );
 
                 new maplibregl.Marker({ color: '#d97706' })
                   .setLngLat([lng, lat])
                   .setPopup(popup)
-                  .addTo(map);
+                  .addTo(map)
+                  .togglePopup();
 
                 const ro = new ResizeObserver(() => {
                   map.resize();
