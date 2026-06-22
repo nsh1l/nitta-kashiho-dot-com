@@ -1,28 +1,82 @@
 <div class="space-y-10">
   {% for shop in shops.shops %}
     <div class="border-b border-gray-100 pb-10 last:border-0 last:pb-0">
-      {% if shop.image %}
-        {% assign resolvedImage = shop.image | resolveShopImage %}
-        <div class="mb-5 overflow-hidden rounded-xl bg-slate-50 aspect-[16/9] max-h-72 border border-gray-100">
-          <picture>
-            <source srcset="{{ resolvedImage | webp }}" type="image/webp">
-            <img
-              x-data="image"
-              data-fallback="/assets/img/ushi_cyan.jpg"
-              x-bind:onerror="handleError"
-              src="{{ resolvedImage }}"
-              alt="{{ shop.name }}"
-              class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"
-              loading="lazy"
-            >
-          </picture>
-        </div>
+      {% if shop.image or shop.images %}
+        {% if shop.images %}
+          <div
+            class="mb-5 overflow-hidden rounded-xl bg-slate-50 aspect-[16/9] max-h-72 border border-gray-100 relative"
+            x-data="{ idx: 0, total: {{ shop.images.size }} }"
+          >
+            {% for img in shop.images %}
+              {% assign resolvedImage = img | resolveShopImage %}
+              <div
+                class="absolute inset-0 transition-opacity duration-300"
+                :class="idx === {{ forloop.index0 }} ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+              >
+                <picture>
+                  <source srcset="{{ resolvedImage | webp }}" type="image/webp">
+                  <img
+                    x-data="image"
+                    data-fallback="/assets/img/ushi_cyan.jpg"
+                    x-bind:onerror="handleError"
+                    src="{{ resolvedImage }}"
+                    alt="{{ shop.name }}"
+                    class="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  >
+                </picture>
+              </div>
+            {% endfor %}
+            {% if shop.images.size > 1 %}
+              <button
+                @click="idx = (idx - 1 + total) % total"
+                class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-white shadow-md transition-colors"
+                aria-label="前の画像"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button
+                @click="idx = (idx + 1) % total"
+                class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-white shadow-md transition-colors"
+                aria-label="次の画像"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {% for img in shop.images %}
+                  <button
+                    @click="idx = {{ forloop.index0 }}"
+                    class="w-2 h-2 rounded-full transition-colors"
+                    :class="idx === {{ forloop.index0 }} ? 'bg-white' : 'bg-white/50'"
+                    aria-label="画像 {{ forloop.index | plus: 1 }}"
+                  ></button>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% else %}
+          {% assign resolvedImage = shop.image | resolveShopImage %}
+          <div class="mb-5 overflow-hidden rounded-xl bg-slate-50 aspect-[16/9] max-h-72 border border-gray-100">
+            <picture>
+              <source srcset="{{ resolvedImage | webp }}" type="image/webp">
+              <img
+                x-data="image"
+                data-fallback="/assets/img/ushi_cyan.jpg"
+                x-bind:onerror="handleError"
+                src="{{ resolvedImage }}"
+                alt="{{ shop.name }}"
+                class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"
+                loading="lazy"
+              >
+            </picture>
+          </div>
+        {% endif %}
       {% endif %}
 
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div class="flex items-center gap-3">
           <h2 class="text-xl font-bold text-gray-900">{{ shop.name }}</h2>
-          <span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-md border {% if shop.category == '直営店' %}border-amber-200 bg-amber-50 text-amber-800{% else %}border-gray-200 bg-gray-50 text-gray-600{% endif %}">
+          <span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-md border {% if shop.category == '直営店' %}border-amber-200 bg-amber-50 text-amber-800{% elsif shop.category == '委託販売' %}border-rose-200 bg-rose-50 text-rose-700{% else %}border-gray-200 bg-gray-50 text-gray-600{% endif %}">
             {{ shop.category }}
           </span>
         </div>

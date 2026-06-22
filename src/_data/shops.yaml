@@ -14,6 +14,17 @@ shops:
     description: "新田菓子舗の製造工場に併設された直営販売所です。出来たての和菓子・洋菓子をその場でお買い求めいただけます。上長田郵便局のすぐ隣にございます。"
     badge: "出来たてをお届け"
 
+  - name: "蒜山高原センター・ジョイフルパーク"
+    category: "直営店"
+    images:
+      - "/assets/img/shops/hiruzen-center-1.jpg"
+      - "/assets/img/shops/hiruzen-center-2.jpg"
+    address: "岡山県真庭市蒜山上福田1205-197"
+    mapUrl: "https://maps.google.com/?q=蒜山高原センター"
+    hours: "10:00 - 16:30（時期により変動あり）"
+    description: "蒜山高原を代表する遊園地のお土産ショップです。入り口にはスフレチーズケーキなどのおすすめ商品、レストラン入り口には『高原まんじゅう』の実演販売がございます。"
+    badge: "観光のお土産に"
+
   - name: "蒜山高原サービスエリア（下り線）"
     category: "取扱店"
     image: "/assets/img/shops/hiruzen-sa.jpg"
@@ -21,15 +32,6 @@ shops:
     mapUrl: "https://maps.google.com/?q=蒜山高原SA+下り"
     description: "米子自動車道の蒜山高原SA（下り線）内ショッピングコーナーです。お土産に最適なスフレチーズケーキや各種サブレなど、旅の途中に手軽にお買い求めいただけます。"
     badge: "旅の途中の寄り道に"
-
-  - name: "蒜山高原センター・ジョイフルパーク"
-    category: "取扱店"
-    image: "/assets/img/shops/hiruzen-center.jpg"
-    address: "岡山県真庭市蒜山上福田1205-197"
-    mapUrl: "https://maps.google.com/?q=蒜山高原センター"
-    hours: "10:00 - 16:30（時期により変動あり）"
-    description: "蒜山高原を代表するレジャー施設のお土産ショップです。ジャージー牛乳をふんだんに使用したお菓子など、豊富に取り揃えております。"
-    badge: "観光のお土産に"
 
   - name: "道の駅 風の家"
     category: "取扱店"
@@ -50,11 +52,12 @@ shops:
     badge: "蒜山高原の中心で"
 
   - name: "天満屋ハピーズ岡南店"
-    category: "取扱店"
+    category: "委託販売"
+    image: "/assets/img/shops/tenmaya-kounan.jpg"
     address: "岡山県岡山市南区築港新町1丁目18-5"
     mapUrl: "https://maps.google.com/?q=天満屋ハピーズ岡南店"
     tel: "086-264-6111"
     hours: "9:00 - 20:00（土日祝は全館21:00まで）"
     closed: "無休"
     description: "天満屋ハピーズ岡南店内の食料品売場にて、当店のお菓子をお買い求めいただけます。一部商品のみのお取り扱いとなります。"
-    badge: "委託販売"
+    badge: "お買い物ついでに"
