@@ -4,95 +4,95 @@
 
 This design system defines the core color palette for 新田菓子舗 (Nitta Kashiho), a Japanese confectionery company. All colors are defined using the OKLCH color space for perceptually uniform color relationships.
 
-### 檸檬（れもん / Lemon）
+### 向日葵（ひまわり / Sunflower）
 
 A vibrant, energetic yellow accent color suitable for calls-to-action and highlights.
 
-- `--color-lemon-50`: oklch(98.68% 0.029 102.68)
-- `--color-lemon-100`: oklch(97.50% 0.057 102.02)
-- `--color-lemon-200`: oklch(95.22% 0.108 103.14)
-- `--color-lemon-300`: oklch(93.27% 0.151 103.23)
-- `--color-lemon-400`: oklch(91.58% 0.179 102.79)
-- `--color-lemon-500`: oklch(89.93% 0.187 101.15)
-- `--color-lemon-600`: oklch(76.24% 0.159 101.73)
-- `--color-lemon-700`: oklch(61.68% 0.128 102.04)
-- `--color-lemon-800`: oklch(46.19% 0.096 102.61)
-- `--color-lemon-900`: oklch(29.34% 0.061 102.72)
-- `--color-lemon-950`: oklch(23.66% 0.048 102.21)
+- `--color-sunflower-50`: oklch(98.68% 0.029 102.68)
+- `--color-sunflower-100`: oklch(97.50% 0.057 102.02)
+- `--color-sunflower-200`: oklch(95.22% 0.108 103.14)
+- `--color-sunflower-300`: oklch(93.27% 0.151 103.23)
+- `--color-sunflower-400`: oklch(91.58% 0.179 102.79)
+- `--color-sunflower-500`: oklch(89.93% 0.187 101.15)
+- `--color-sunflower-600`: oklch(76.24% 0.159 101.73)
+- `--color-sunflower-700`: oklch(61.68% 0.128 102.04)
+- `--color-sunflower-800`: oklch(46.19% 0.096 102.61)
+- `--color-sunflower-900`: oklch(29.34% 0.061 102.72)
+- `--color-sunflower-950`: oklch(23.66% 0.048 102.21)
 
-### 薔薇（ばら / Bara）
+### 漉し餡（こしあん / Koshian）
 
 A sophisticated, muted rose for secondary elements and romantic accents.
 
-- `--color-bara-50`: oklch(95.53% 0.009 17.31)
-- `--color-bara-100`: oklch(91.15% 0.019 13.40)
-- `--color-bara-200`: oklch(82.30% 0.037 15.79)
-- `--color-bara-300`: oklch(73.27% 0.059 15.87)
-- `--color-bara-400`: oklch(64.25% 0.083 16.67)
-- `--color-bara-500`: oklch(55.41% 0.106 19.57)
-- `--color-bara-600`: oklch(47.31% 0.090 18.24)
-- `--color-bara-700`: oklch(38.85% 0.070 18.27)
-- `--color-bara-800`: oklch(29.92% 0.049 18.42)
-- `--color-bara-900`: oklch(20.22% 0.029 16.11)
-- `--color-bara-950`: oklch(17.20% 0.021 14.03)
+- `--color-koshian-50`: oklch(95.53% 0.009 17.31)
+- `--color-koshian-100`: oklch(91.15% 0.019 13.40)
+- `--color-koshian-200`: oklch(82.30% 0.037 15.79)
+- `--color-koshian-300`: oklch(73.27% 0.059 15.87)
+- `--color-koshian-400`: oklch(64.25% 0.083 16.67)
+- `--color-koshian-500`: oklch(55.41% 0.106 19.57)
+- `--color-koshian-600`: oklch(47.31% 0.090 18.24)
+- `--color-koshian-700`: oklch(38.85% 0.070 18.27)
+- `--color-koshian-800`: oklch(29.92% 0.049 18.42)
+- `--color-koshian-900`: oklch(20.22% 0.029 16.11)
+- `--color-koshian-950`: oklch(17.20% 0.021 14.03)
 
-### 抹茶（まっちゃ / Matcha）
+### 蕗（ふき / Fuki）
 
 A fresh, natural green inspired by Japanese green tea, suitable for matcha-flavored products and natural themes.
 
-- `--color-matcha-50`: oklch(96.70% 0.008 121.63)
-- `--color-matcha-100`: oklch(93.32% 0.016 126.83)
-- `--color-matcha-200`: oklch(86.81% 0.034 125.60)
-- `--color-matcha-300`: oklch(79.94% 0.051 126.42)
-- `--color-matcha-400`: oklch(72.97% 0.068 127.10)
-- `--color-matcha-500`: oklch(66.12% 0.088 127.96)
-- `--color-matcha-600`: oklch(56.15% 0.071 127.64)
-- `--color-matcha-700`: oklch(45.94% 0.057 127.36)
-- `--color-matcha-800`: oklch(35.13% 0.042 126.82)
-- `--color-matcha-900`: oklch(23.03% 0.022 127.88)
-- `--color-matcha-950`: oklch(19.29% 0.017 129.48)
+- `--color-fuki-50`: oklch(96.70% 0.008 121.63)
+- `--color-fuki-100`: oklch(93.32% 0.016 126.83)
+- `--color-fuki-200`: oklch(86.81% 0.034 125.60)
+- `--color-fuki-300`: oklch(79.94% 0.051 126.42)
+- `--color-fuki-400`: oklch(72.97% 0.068 127.10)
+- `--color-fuki-500`: oklch(66.12% 0.088 127.96)
+- `--color-fuki-600`: oklch(56.15% 0.071 127.64)
+- `--color-fuki-700`: oklch(45.94% 0.057 127.36)
+- `--color-fuki-800`: oklch(35.13% 0.042 126.82)
+- `--color-fuki-900`: oklch(23.03% 0.022 127.88)
+- `--color-fuki-950`: oklch(19.29% 0.017 129.48)
 
-### 蜜柑（みかん / Mikan）
+### 焼き目（やきめ / Baked）
 
 A warm, energetic orange reminiscent of citrus fruits, suitable for highlighting important information.
 
-- `--color-mikan-50`: oklch(96.79% 0.022 67.56)
-- `--color-mikan-100`: oklch(93.86% 0.044 68.35)
-- `--color-mikan-200`: oklch(87.82% 0.088 66.27)
-- `--color-mikan-300`: oklch(82.41% 0.129 64.69)
-- `--color-mikan-400`: oklch(77.37% 0.163 60.28)
-- `--color-mikan-500`: oklch(73.19% 0.186 52.98)
-- `--color-mikan-600`: oklch(62.01% 0.156 53.46)
-- `--color-mikan-700`: oklch(50.29% 0.126 54.25)
-- `--color-mikan-800`: oklch(38.04% 0.092 56.80)
-- `--color-mikan-900`: oklch(24.71% 0.056 63.84)
-- `--color-mikan-950`: oklch(20.33% 0.045 67.17)
+- `--color-baked-50`: oklch(96.79% 0.022 67.56)
+- `--color-baked-100`: oklch(93.86% 0.044 68.35)
+- `--color-baked-200`: oklch(87.82% 0.088 66.27)
+- `--color-baked-300`: oklch(82.41% 0.129 64.69)
+- `--color-baked-400`: oklch(77.37% 0.163 60.28)
+- `--color-baked-500`: oklch(73.19% 0.186 52.98)
+- `--color-baked-600`: oklch(62.01% 0.156 53.46)
+- `--color-baked-700`: oklch(50.29% 0.126 54.25)
+- `--color-baked-800`: oklch(38.04% 0.092 56.80)
+- `--color-baked-900`: oklch(24.71% 0.056 63.84)
+- `--color-baked-950`: oklch(20.33% 0.045 67.17)
 
-### 藍（あい / Ai）
+### 冷泉（れいせん / Spring）
 
 A calming, deep indigo inspired by traditional Japanese indigo dye, suitable for backgrounds and elegance.
 
-- `--color-ai-50`: oklch(96.45% 0.008 157.09)
-- `--color-ai-100`: oklch(93.08% 0.018 155.80)
-- `--color-ai-200`: oklch(86.13% 0.036 156.91)
-- `--color-ai-300`: oklch(79.10% 0.055 155.75)
-- `--color-ai-400`: oklch(72.12% 0.073 154.98)
-- `--color-ai-500`: oklch(64.81% 0.091 153.93)
-- `--color-ai-600`: oklch(55.39% 0.077 153.99)
-- `--color-ai-700`: oklch(45.19% 0.062 154.04)
-- `--color-ai-800`: oklch(34.48% 0.044 154.77)
-- `--color-ai-900`: oklch(22.81% 0.025 153.81)
-- `--color-ai-950`: oklch(18.89% 0.018 155.12)
+- `--color-spring-50`: oklch(96.45% 0.008 157.09)
+- `--color-spring-100`: oklch(93.08% 0.018 155.80)
+- `--color-spring-200`: oklch(86.13% 0.036 156.91)
+- `--color-spring-300`: oklch(79.10% 0.055 155.75)
+- `--color-spring-400`: oklch(72.12% 0.073 154.98)
+- `--color-spring-500`: oklch(64.81% 0.091 153.93)
+- `--color-spring-600`: oklch(55.39% 0.077 153.99)
+- `--color-spring-700`: oklch(45.19% 0.062 154.04)
+- `--color-spring-800`: oklch(34.48% 0.044 154.77)
+- `--color-spring-900`: oklch(22.81% 0.025 153.81)
+- `--color-spring-950`: oklch(18.89% 0.018 155.12)
 
 ## Usage Guidelines
 
 ### Color Application
 
-- Use 檸檬 Lemon (`--color-lemon-*`) for primary actions, buttons, and accent elements
-- Use 薔薇 Bara (`--color-bara-*`) for secondary backgrounds, cards, and subtle elements
-- Use 抹茶 Matcha (`--color-matcha-*`) for nature-related content, success states, and organic themes
-- Use 蜜柑 Mikan (`--color-mikan-*`) for warnings, highlights, and energetic accents
-- Use 藍 Ai (`--color-ai-*`) for stable backgrounds, navigation, and trust-building elements
+- Use 向日葵 Sunflower (`--color-sunflower-*`) for primary actions, buttons, and accent elements
+- Use 漉し餡 Koshian (`--color-koshian-*`) for secondary backgrounds, cards, and subtle elements
+- Use 蕗 Fuki (`--color-fuki-*`) for nature-related content, success states, and organic themes
+- Use 焼き目 Baked (`--color-baked-*`) for warnings, highlights, and energetic accents
+- Use 冷泉 Spring (`--color-spring-*`) for stable backgrounds, navigation, and trust-building elements
 
 ### Accessibility
 
@@ -107,8 +107,8 @@ Colors are defined as CSS custom properties and can be used directly in styleshe
 
 ```css
 .element {
-  background-color: var(--color-matcha-500);
-  color: var(--color-ai-900);
+  background-color: var(--color-fuki-500);
+  color: var(--color-spring-900);
 }
 ```
 
@@ -126,61 +126,61 @@ Colors are defined as CSS custom properties and can be used directly in styleshe
 
 ## カラーパレット
 
-このデザインシステムは、和菓子店「新田菓子舗」の核となるカラーパレットを定義するものです。すべての色は、知覚的に均一な色関係を保つため、OKLCH色空間を用いて定義されています。
+このデザインシステムは、和菓子店「新田菓子舗」の核となるカラーパレットを定義するものです。すべての色は, 知覚的に均一な色関係を保つため, OKLCH色空間を用いて定義されています。
 
-### 檸檬（れもん）
+### 向日葵（ひまわり）
 
 鮮やかでエネルギッシュなイエロー。アクションボタンやハイライトに適したアクセントカラーです。
 
-### 薔薇（ばら）
+### 漉し餡（こしあん）
 
-洗練された落ち着きのあるローズカラー。サブ要素や、ロマンチックな雰囲気を添えるアクセントとして最適です。
+洗練された落ち着きのあるローズカラー。サブ要素や, ロマンチックな雰囲気を添えるアクセントとして最適です。
 
-### 抹茶（まっちゃ）
+### 蕗（ふき）
 
-日本の緑茶をイメージした、瑞々しくナチュラルなグリーン。抹茶味の商品や自然なテーマのデザインに適しています。
+日本の緑茶をイメージした, 瑞々しくナチュラルなグリーン。抹茶味の商品や自然なテーマのデザインに適しています。
 
-### 蜜柑（みかん）
+### 焼き目（やきめ）
 
-柑橘類を思わせる、温かみのあるエネルギッシュなオレンジ。重要な情報を強調する際に適しています。
+柑橘類を思わせる, 温かみのあるエネルギッシュなオレンジ。重要な情報を強調する際に適しています。
 
-### 藍（あい）
+### 冷泉（れいせん）
 
-日本の伝統的な藍染めから着想を得た、深く落ち着きのあるインディゴ。背景色や、上品さを演出したい場面に適しています。
+日本の伝統的な藍染めから着想を得た, 深く落ち着きのあるインディゴ。背景色や, 上品さを演出したい場面に適しています。
 
 ## 利用ガイドライン
 
 ### 色の適用
 
-- 檸檬（--color-lemon-*）：主要なアクション、ボタン、アクセント要素に使用します。
-- 薔薇（--color-bara-*）：サブ背景、カード、控えめな要素に使用します。
-- 抹茶（--color-matcha-*）：自然に関連するコンテンツ、成功状態の表示、オーガニックなテーマに使用します。
-- 蜜柑（--color-mikan-*）：警告、ハイライト、エネルギッシュなアクセントに使用します。
-- 藍（--color-ai-*）：安定感のある背景、ナビゲーション、信頼感の醸成が必要な要素に使用します。
+- 向日葵（--color-sunflower-*）：主要なアクション, ボタン, アクセント要素に使用します。
+- 漉し餡（--color-koshian-*）：サブ背景, カード, 控えめな要素に使用します。
+- 蕗（--color-fuki-*）：自然に関連するコンテンツ, 成功状態の表示, オーガニックなテーマに使用します。
+- 焼き目（--color-baked-*）：警告, ハイライト, エネルギッシュなアクセントに使用します。
+- 冷泉（--color-spring-*）：安定感のある背景, ナビゲーション, 信頼感の醸成が必要な要素に使用します。
 
 ### アクセシビリティ
 
-色を組み合わせる際は、十分なコントラスト比を確保してください。
+色を組み合わせる際は, 十分なコントラスト比を確保してください。
 
-- 背景上のテキストは、WCAG 2.1 AA基準を満たす必要があります（通常のテキストで最低4.5:1、大きなテキストで3:1）。
-- 実装前に、アクセシビリティツールを使用して色の組み合わせをテストしてください。
+- 背景上のテキストは, WCAG 2.1 AA基準を満たす必要があります（通常のテキストで最低4.5:1, 大きなテキストで3:1）。
+- 実装前に, アクセシビリティツールを使用して色の組み合わせをテストしてください。
 
 ### 実装方法
 
-色はCSSカスタムプロパティとして定義されており、スタイルシートで直接使用可能です。
+色はCSSカスタムプロパティとして定義されており, スタイルシートで直接使用可能です。
 
 ```css
 .element {
-  background-color: var(--color-matcha-500);
-  color: var(--color-ai-900);
+  background-color: var(--color-fuki-500);
+  color: var(--color-spring-900);
 }
 ```
 
 ## デザイン原則
 
-新田菓子舗のビジュアルアイデンティティは、和菓子の伝統的な美学と現代的な感性を両立させています。
+新田菓子舗のビジュアルアイデンティティは, 和菓子の伝統的な美学と現代的な感性を両立させています。
 
-- **温かみ（Warmth）**: オレンジやイエローの色調を用い、焼きたての菓子の温もりを表現します。
-- **自然体（Naturalness）**: グリーンやインディゴの色調を取り入れ、自然素材の質感を反映させます。
-- **洗練（Sophistication）**: ローズの色調を適用し、プレミアム感を演出します。
-- **明瞭さ（Clarity）**: すべての色において、読みやすさとアクセシビリティを確保します。
+- **温かみ（Warmth）**: オレンジやイエローの色調を用い, 焼きたての菓子の温もりを表現します。
+- **自然体（Naturalness）**: グリーンやインディゴの色調を取り入れ, 自然素材の質感を反映させます。
+- **洗練（Sophistication）**: ローズの色調を適用し, プレミアム感を演出します。
+- **明瞭さ（Clarity）**: すべての色において, 読みやすさとアクセシビリティを確保します。
