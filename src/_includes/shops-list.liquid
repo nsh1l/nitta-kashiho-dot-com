@@ -97,7 +97,7 @@
           <dd class="sm:col-span-3 text-gray-900 flex flex-col sm:flex-row sm:items-center gap-2">
             <span>{{ shop.address }}</span>
             {% if shop.mapUrl %}
-              <a href="{{ shop.mapUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-spring-600 hover:underline gap-1">
+              <a href="{{ shop.mapUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-spring-700 hover:underline gap-1">
                 地図を見る ↗
               </a>
             {% endif %}
@@ -106,7 +106,7 @@
           {% if shop.tel %}
             <dt class="font-medium text-gray-500">お電話</dt>
             <dd class="sm:col-span-3 text-gray-900">
-              <a href="tel:{{ shop.tel }}" class="hover:underline text-spring-600 sm:text-gray-900 sm:no-underline">{{ shop.tel }}</a>
+              <a href="tel:{{ shop.tel }}" class="hover:underline text-spring-700 sm:text-gray-900 sm:no-underline">{{ shop.tel }}</a>
             </dd>
           {% endif %}
 
