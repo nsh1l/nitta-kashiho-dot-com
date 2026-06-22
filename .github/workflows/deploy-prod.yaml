@@ -1,0 +1,57 @@
+name: Deploy production site
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "本番サイトにデプロイします。「deploy」と入力してください"
+        required: true
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # 「deploy」と入力した場合のみ実行
+    if: github.event.inputs.confirm == 'deploy'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.1.2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Build Site
+        run: bun run deploy
+
+      - name: Deploy to Production Server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          SOURCE: "_site/"
+          ARGS: "-rlgoDzvc -i "
+          REMOTE_HOST: ${{ secrets.HOST_SERVER }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: ${{ secrets.PORT }}
+          TARGET: ${{ secrets.TARGET_PATH_PROD }}
+          SCRIPT_BEFORE: |
+            mkdir -p ${{ secrets.TARGET_PATH_PROD }}
+
+      - name: Summary
+        run: |
+          echo "## ✅ 本番デプロイ完了" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**コミット:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "**ブランチ:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**時刻:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "→ https://nitta-kashiho.com" >> $GITHUB_STEP_SUMMARY
