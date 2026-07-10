@@ -1,0 +1,22 @@
+name: Deploy new site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "_site/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build site
+        run: bun run deploy
+      - name: Deploy to new subdomain
+        run: |
+          rsync -az --delete -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/new/

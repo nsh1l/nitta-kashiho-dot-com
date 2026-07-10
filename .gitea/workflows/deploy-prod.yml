@@ -1,0 +1,30 @@
+name: Deploy production site
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "本番サイトにデプロイします。「deploy」と入力してください"
+        required: true
+        default: ""
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'deploy'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build site
+        run: bun run deploy
+      - name: Deploy to production
+        run: |
+          rsync -az --delete \
+            --exclude='/dev/' \
+            --exclude='/new/' \
+            --exclude='/legacy/' \
+            --exclude='/old/' \
+            -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/
