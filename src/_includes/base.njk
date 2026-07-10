@@ -4,53 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="{{ eleventy.generator }}" />
-    <meta name="description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。チーズケーキ、サブレ、まんじゅうなど、ジャージー牛乳たっぷりの手作りお菓子をお届けします。' }}" />
+    <meta
+      name="description"
+      content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。チーズケーキ、サブレ、まんじゅうなど、ジャージー牛乳たっぷりの手作りお菓子をお届けします。' }}"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ヒルゼンのお菓子屋 新田菓子舗" />
-    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗" />
-    <meta property="og:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
-    <meta property="og:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+    <meta
+      property="og:title"
+      content="{% if title %}{{ title }} -{% endif %}ヒルゼンのお菓子屋 新田菓子舗"
+    />
+    <meta
+      property="og:description"
+      content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}"
+    />
+    <meta
+      property="og:image"
+      content="{{ ogImage or '/assets/img/souffle.jpg' }}"
+    />
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:locale" content="ja_JP" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗" />
-    <meta name="twitter:description" content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}" />
-    <meta name="twitter:image" content="{{ ogImage or '/assets/img/souffle.jpg' }}" />
+    <meta
+      name="twitter:title"
+      content="{% if title %}{{ title }} -{% endif %}ヒルゼンのお菓子屋 新田菓子舗"
+    />
+    <meta
+      name="twitter:description"
+      content="{{ metaDescription or '蒜山高原の特産品を使った洋菓子・和菓子の製造・販売。' }}"
+    />
+    <meta
+      name="twitter:image"
+      content="{{ ogImage or '/assets/img/souffle.jpg' }}"
+    />
 
-    <title>{% if title %}{{ title }} - {% endif %}ヒルゼンのお菓子屋 新田菓子舗</title>
+    <title>
+      {% if title %}{{ title }} -{% endif %}ヒルゼンのお菓子屋 新田菓子舗
+    </title>
 
     <link rel="stylesheet" href="{{ env.siteUrl }}/assets/css/global.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP&display=swap"
+      href="{{ env.siteUrl }}/assets/fonts/line-seed-jp.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/jpg" href="/assets/img/ushi_cyan.jpg" />
 
     {% if hasMap %}
-    <!-- MapLibre GL JS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css"
-      integrity="sha256-eSrJl9z2rm9kPrTi3uRjDIXnBWUmvY+4X/6Dxn1sQbQ="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js"
-      integrity="sha256-taNOaTD/k327ue7IiSz/uAukc8zoiuXKjEZUQy9fDrw="
-      crossorigin=""
-    ></script>
+      <!-- MapLibre GL JS -->
+      <link
+        rel="stylesheet"
+        href="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl.css"
+      />
+      <script src="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl.js"></script>
     {% endif %}
 
     <!-- Alpine.js -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="{{ env.siteUrl }}/assets/js/img-onerror.mjs" type="module"></script>
-
+    <script
+      src="{{ env.siteUrl }}/assets/vendor/alpinejs/cdn.min.js"
+      defer
+    ></script>
+    <script
+      src="{{ env.siteUrl }}/assets/js/img-onerror.mjs"
+      type="module"
+    ></script>
   </head>
 
   <body>

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "LINE Seed JP";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/line-seed-jp-400.ttf") format("truetype");
+}
