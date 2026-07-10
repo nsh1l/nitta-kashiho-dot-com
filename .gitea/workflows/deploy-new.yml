@@ -1,6 +1,7 @@
 name: Deploy new site
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths-ignore:
