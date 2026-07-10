@@ -7,16 +7,27 @@ on:
     paths-ignore:
       - "_site/**"
 
+env:
+  BUN_INSTALL: /home/nsh1l/.bun
+  PATH: /home/nsh1l/.bun/bin:/usr/local/bin:/usr/bin:/bin
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        run: |
+          git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
+          cd repo
+          git config --local --replace-all http.http://localhost:3000/.extraHeader "Authorization: Basic ${{ secrets.GITEA_AUTH_HEADER }}"
       - name: Install dependencies
+        working-directory: repo
         run: bun install --frozen-lockfile
       - name: Build site
+        working-directory: repo
         run: bun run deploy
       - name: Deploy to new subdomain
+        working-directory: repo
         run: |
           rsync -az --delete -e 'ssh -p 10022' \
             _site/ \
