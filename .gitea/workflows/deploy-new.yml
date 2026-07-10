@@ -18,8 +18,6 @@ jobs:
       - name: Checkout repository
         run: |
           git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
-          cd repo
-          git config --local --replace-all http.http://localhost:3000/.extraHeader "Authorization: Basic ${{ secrets.GITEA_AUTH_HEADER }}"
       - name: Install dependencies
         working-directory: repo
         run: bun install --frozen-lockfile
