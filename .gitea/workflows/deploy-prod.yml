@@ -8,17 +8,25 @@ on:
         required: true
         default: ""
 
+env:
+  BUN_INSTALL: /home/nsh1l/.bun
+  PATH: /home/nsh1l/.bun/bin:/usr/local/bin:/usr/bin:/bin
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.event.inputs.confirm == 'deploy'
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        run: git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
       - name: Install dependencies
+        working-directory: repo
         run: bun install --frozen-lockfile
       - name: Build site
+        working-directory: repo
         run: bun run deploy
       - name: Deploy to production
+        working-directory: repo
         run: |
           rsync -az --delete \
             --exclude='/dev/' \
