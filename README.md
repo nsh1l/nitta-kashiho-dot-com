@@ -59,7 +59,7 @@ _site/               # Generated static output
 
 ## Deployment
 
-Push to `main` triggers automatic build and deploy to [dev.nitta-kashiho.com](https://dev.nitta-kashiho.com).
+Push to `main` triggers automatic build and deploy to [new.nitta-kashiho.com](https://new.nitta-kashiho.com).
 
 ## License
 
