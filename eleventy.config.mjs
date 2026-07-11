@@ -9,6 +9,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setIncludesDirectory("_includes");
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.ignores.add(
     ".gitignore, .prettierrc, bun.lock, README.md, CLAUDE.md, AGENTS.md",
   );
