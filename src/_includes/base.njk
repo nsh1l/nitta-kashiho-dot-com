@@ -62,21 +62,10 @@
       <script src="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl-csp.js"></script>
     {% endif %}
 
-    <!-- Alpine.js -->
     <script
-      src="{{ env.siteUrl }}/assets/vendor/alpinejs/csp.min.js"
-      defer
-    ></script>
-    <script
-      src="{{ env.siteUrl }}/assets/js/img-onerror.mjs"
+      src="{{ env.siteUrl }}/assets/js/alpine-init.js"
       type="module"
     ></script>
-    {% if hasMap %}
-      <script
-        src="{{ env.siteUrl }}/assets/js/map-component.mjs"
-        type="module"
-      ></script>
-    {% endif %}
   </head>
 
   <body>

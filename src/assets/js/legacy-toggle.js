@@ -1,7 +1,7 @@
 function registerLegacyToggle() {
   if (!window.Alpine) return;
 
-  Alpine.data("legacyToggle", () => ({
+  window.Alpine.data("legacyToggle", () => ({
     show: false,
 
     init() {

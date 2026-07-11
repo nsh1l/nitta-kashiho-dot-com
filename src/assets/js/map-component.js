@@ -10,7 +10,7 @@ function escapeHtml(value) {
 function registerMapComponent() {
   if (!window.Alpine) return;
 
-  Alpine.data("mapComponent", () => ({
+  window.Alpine.data("mapComponent", () => ({
     map: null,
     resizeObserver: null,
 

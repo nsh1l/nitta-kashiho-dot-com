@@ -7,7 +7,7 @@
       <source srcset="assets/img/oempop.webp" type="image/webp">
       <img
         x-data="image"
-        x-bind:onerror="handleError"
+        x-on:error="handleError($event)"
         src="assets/img/oempop.jpg"
         class="aspect-auto w-lg object-cover"
         loading="lazy"

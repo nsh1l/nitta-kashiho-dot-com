@@ -18,7 +18,7 @@
                   <img
                     x-data="image"
                     data-fallback="/assets/img/ushi_cyan.jpg"
-                    x-bind:onerror="handleError"
+                    x-on:error="handleError($event)"
                     src="{{ resolvedImage }}"
                     alt="{{ shop.name }}"
                     class="w-full h-full object-cover object-center"
@@ -62,7 +62,7 @@
               <img
                 x-data="image"
                 data-fallback="/assets/img/ushi_cyan.jpg"
-                x-bind:onerror="handleError"
+                x-on:error="handleError($event)"
                 src="{{ resolvedImage }}"
                 alt="{{ shop.name }}"
                 class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"

@@ -1,5 +1,5 @@
 document.addEventListener("alpine:init", () => {
-  Alpine.data("image", () => ({
+  window.Alpine.data("image", () => ({
     fallback: "/assets/img/404.jpg",
 
     handleError(e) {
