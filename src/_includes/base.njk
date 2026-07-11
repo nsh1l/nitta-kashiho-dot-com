@@ -59,18 +59,24 @@
         rel="stylesheet"
         href="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl.css"
       />
-      <script src="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl.js"></script>
+      <script src="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl-csp.js"></script>
     {% endif %}
 
     <!-- Alpine.js -->
     <script
-      src="{{ env.siteUrl }}/assets/vendor/alpinejs/cdn.min.js"
+      src="{{ env.siteUrl }}/assets/vendor/alpinejs/csp.min.js"
       defer
     ></script>
     <script
       src="{{ env.siteUrl }}/assets/js/img-onerror.mjs"
       type="module"
     ></script>
+    {% if hasMap %}
+      <script
+        src="{{ env.siteUrl }}/assets/js/map-component.mjs"
+        type="module"
+      ></script>
+    {% endif %}
   </head>
 
   <body>

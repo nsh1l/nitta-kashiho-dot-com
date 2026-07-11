@@ -36,6 +36,11 @@
                     {{ variant.price -}} 円 / {{ variant.piece -}}{{ variant.unit }}
                   </div>
                 {% endfor %}
+                {% if item.shelfLife %}
+                  <div class="text-xs tabular-nums text-gray-600">
+                    {{ item.shelfLife }}
+                  </div>
+                {% endif %}
               </div>
               {% if long_desc %}
               <div x-data="{ expanded: false }" class="mt-2">
