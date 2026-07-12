@@ -8,7 +8,8 @@
   Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://a.tile.openstreetmap.org https://b.tile.openstreetmap.org https://c.tile.openstreetmap.org; font-src 'self' data:; connect-src 'self' https://a.tile.openstreetmap.org https://b.tile.openstreetmap.org https://c.tile.openstreetmap.org; worker-src 'self'; child-src 'self'; upgrade-insecure-requests"
 </IfModule>
 
-# This preview / mirror subdomain is deprecated.
-# Redirect all paths to the canonical root domain.
-RedirectMatch 301 ^/(.*)$ https://nitta-kashiho.com/$1
-RedirectMatch 301 ^$ https://nitta-kashiho.com/
+# Redirect deprecated preview directories/subdomains to the canonical root domain.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(.*)$ https://nitta-kashiho.com/$1 [R=301,L]
+</IfModule>

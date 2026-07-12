@@ -8,7 +8,9 @@
   Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://a.tile.openstreetmap.org https://b.tile.openstreetmap.org https://c.tile.openstreetmap.org; font-src 'self' data:; connect-src 'self' https://a.tile.openstreetmap.org https://b.tile.openstreetmap.org https://c.tile.openstreetmap.org; worker-src 'self'; child-src 'self'; upgrade-insecure-requests"
 </IfModule>
 
-# Redirect the deprecated /new/ path prefix to the root site.
-# (Kept for users who followed the preview URL.)
-RedirectMatch 301 ^/new/(.*)$ https://nitta-kashiho.com/$1
-RedirectMatch 301 ^/new$ https://nitta-kashiho.com/
+# Redirect deprecated preview path prefixes to the canonical root site.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(new|dev)/?$ https://nitta-kashiho.com/ [R=301,L]
+  RewriteRule ^(new|dev)/(.*)$ https://nitta-kashiho.com/$2 [R=301,L]
+</IfModule>
