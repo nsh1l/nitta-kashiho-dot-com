@@ -46,26 +46,20 @@
       {% if title %}{{ title }} -{% endif %}ヒルゼンのお菓子屋 新田菓子舗
     </title>
 
-    <link rel="stylesheet" href="{{ env.siteUrl }}/assets/css/global.css" />
-    <link
-      rel="stylesheet"
-      href="{{ env.siteUrl }}/assets/fonts/line-seed-jp.css"
-    />
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/fonts/line-seed-jp.css" />
     <link rel="icon" type="image/jpg" href="/assets/img/ushi_cyan.jpg" />
 
     {% if hasMap %}
       <!-- MapLibre GL JS -->
       <link
         rel="stylesheet"
-        href="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl.css"
+        href="/assets/vendor/maplibre-gl/maplibre-gl.css"
       />
-      <script src="{{ env.siteUrl }}/assets/vendor/maplibre-gl/maplibre-gl-csp.js"></script>
+      <script src="/assets/vendor/maplibre-gl/maplibre-gl-csp.js"></script>
     {% endif %}
 
-    <script
-      src="{{ env.siteUrl }}/assets/js/alpine-init.js"
-      type="module"
-    ></script>
+    <script src="/assets/js/alpine-init.js" type="module"></script>
   </head>
 
   <body>
