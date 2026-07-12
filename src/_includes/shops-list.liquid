@@ -67,6 +67,9 @@
               >
             </picture>
           </div>
+          {% if shop.imageLicense %}
+            <p class="text-[10px] text-gray-400 text-right mb-4 -mt-3">{{ shop.imageLicense }}</p>
+          {% endif %}
         {% endif %}
       {% endif %}
 

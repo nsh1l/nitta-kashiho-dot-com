@@ -27,7 +27,8 @@ shops:
 
   - name: "蒜山高原サービスエリア（下り線）"
     category: "取扱店"
-    image: "/assets/img/shops/hiruzen-sa.gif"
+    image: "/assets/img/shops/hiruzen-sa.jpg"
+    imageLicense: "Mti / Wikimedia Commons / CC BY-SA 3.0（加工あり）"
     address: "岡山県真庭市蒜山西茅部（米子自動車道）"
     mapUrl: "https://maps.google.com/?q=蒜山高原SA+下り"
     description: "米子自動車道の蒜山高原SA（下り線）内ショッピングコーナーです。お土産に最適なスフレチーズケーキや各種サブレなど、旅の途中に手軽にお買い求めいただけます。"
