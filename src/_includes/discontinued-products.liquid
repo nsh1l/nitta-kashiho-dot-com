@@ -1,4 +1,8 @@
-<section class="px-4 py-12 max-w-5xl mx-auto">
+<section
+  class="px-4 py-12 max-w-5xl mx-auto"
+  x-data="{ open: false, src: '', alt: '' }"
+  @keydown.escape.window="open = false"
+>
   <h2 class="mb-2 text-2xl font-semibold text-center">終売商品の記録</h2>
   <p class="mb-8 text-center text-sm text-gray-500">
     かつて新田菓子舗で販売していた商品たちです。お客様との思い出とともに、ここで残しております。
@@ -15,17 +19,18 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {% for item in group.items %}
           <div class="flex flex-row bg-white rounded-xl shadow-md overflow-hidden border border-koshian-100 opacity-80 hover:opacity-100 transition-opacity">
-            <div class="w-1/3 shrink-0 overflow-hidden bg-koshian-50">
-              <picture>
-                <img
-                  src="{{ item.image | prepend: '/' }}"
-                  alt="{{ item.name }}"
-                  class="w-full h-full object-contain"
-                  loading="lazy"
-                  onerror="this.closest('picture').style.display='none'; this.closest('.w-1\/3').classList.add('placeholder')"
-                >
-              </picture>
-            </div>
+            <button
+              type="button"
+              class="w-1/3 shrink-0 overflow-hidden bg-koshian-50 cursor-pointer"
+              @click="open = true; src = '{{ item.image | prepend: '/' }}'; alt = '{{ item.name }}'"
+            >
+              <img
+                src="{{ item.image | prepend: '/' }}"
+                alt="{{ item.name }}"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+            </button>
             <div class="flex flex-col justify-between p-3 w-2/3">
               <div>
                 <h4 class="text-sm font-medium text-gray-900 mb-1">{{ item.name }}</h4>
@@ -44,4 +49,24 @@
       </div>
     </div>
   {% endfor %}
+
+  <div
+    x-show="open"
+    x-cloak
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+    @click.self="open = false"
+  >
+    <div class="relative max-w-3xl w-full">
+      <button
+        type="button"
+        class="absolute -top-10 right-0 text-white text-sm"
+        @click="open = false"
+      >閉じる ✕</button>
+      <img
+        :src="src"
+        :alt="alt"
+        class="w-full max-h-[80vh] object-contain rounded-lg bg-white"
+      >
+    </div>
+  </div>
 </section>
