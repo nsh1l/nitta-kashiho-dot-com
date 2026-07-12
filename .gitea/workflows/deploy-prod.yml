@@ -7,6 +7,10 @@ on:
         description: "本番サイトにデプロイします。「deploy」と入力してください"
         required: true
         default: ""
+  push:
+    branches: [main]
+    paths-ignore:
+      - "_site/**"
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
@@ -15,7 +19,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event.inputs.confirm == 'deploy'
+    if: github.event_name == 'push' || github.event.inputs.confirm == 'deploy'
     steps:
       - name: Checkout repository
         run: git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
@@ -28,6 +32,8 @@ jobs:
       - name: Deploy to production
         working-directory: repo
         run: |
+          ssh -p 10022 nittakashiho@nitta-kashiho.com \
+            'mkdir -p /home/nittakashiho/backups && tar -C /home/nittakashiho/nitta-kashiho.com/public_html --exclude=./dev --exclude=./new --exclude=./legacy --exclude=./old -czf /home/nittakashiho/backups/nitta-kashiho-public_html-$(date +%Y%m%d-%H%M%S).tar.gz .'
           rsync -az --delete \
             --exclude='/dev/' \
             --exclude='/new/' \
@@ -36,3 +42,17 @@ jobs:
             -e 'ssh -p 10022' \
             _site/ \
             nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/
+      - name: Deploy mirror to new subdomain with 301 redirect
+        working-directory: repo
+        run: |
+          cp src/_htaccess-redirect _site/.htaccess
+          rsync -az --delete -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/new/
+      - name: Deploy dev subdomain with 301 redirect
+        working-directory: repo
+        run: |
+          cp src/_htaccess-redirect _site/.htaccess
+          rsync -az --delete -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/dev/

@@ -1,11 +1,7 @@
-name: Deploy new site
+name: Deploy new site mirror
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "_site/**"
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
@@ -24,9 +20,17 @@ jobs:
       - name: Build site
         working-directory: repo
         run: bun run deploy
-      - name: Deploy to new subdomain
+      - name: Deploy mirror to new subdomain with 301 redirect
         working-directory: repo
         run: |
+          cp src/_htaccess-redirect _site/.htaccess
           rsync -az --delete -e 'ssh -p 10022' \
             _site/ \
             nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/new/
+      - name: Deploy to dev subdomain with 301 redirect
+        working-directory: repo
+        run: |
+          cp src/_htaccess-redirect _site/.htaccess
+          rsync -az --delete -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/dev/

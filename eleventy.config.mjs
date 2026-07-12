@@ -10,6 +10,9 @@ export default function (eleventyConfig) {
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
+  eleventyConfig.setServerOptions({
+    port: 4722,
+  });
   eleventyConfig.ignores.add(
     ".gitignore, .prettierrc, bun.lock, README.md, CLAUDE.md, AGENTS.md",
   );

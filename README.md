@@ -1,6 +1,6 @@
 # 新田菓子舗 (Nitta Kashiho)
 
-[![Build and Deploy](https://github.com/nsh1l/nitta-kashiho-dot-com/actions/workflows/deploy.yaml/badge.svg)](https://github.com/nsh1l/nitta-kashiho-dot-com/actions)
+[![Build and Deploy](https://github.com/nsh1l/nitta-kashiho-dot-com/actions/workflows/deploy.yaml/badge.svg)](https://github.com/nsh1l/nitta-kashiho-dot-com/actions/workflows/deploy.yaml)
 
 [https://nitta-kashiho.com](https://nitta-kashiho.com/)
 
@@ -59,7 +59,10 @@ _site/               # Generated static output
 
 ## Deployment
 
-Push to `main` triggers automatic build and deploy to [new.nitta-kashiho.com](https://new.nitta-kashiho.com).
+Push to `main` triggers automatic build and deploy to [nitta-kashiho.com](https://nitta-kashiho.com).
+
+- `new.nitta-kashiho.com` and `dev.nitta-kashiho.com` are now deprecated mirrors that 301-redirect to the canonical root domain.
+- `legacy.nitta-kashiho.com` remains as an archived legacy site.
 
 ## License
 
