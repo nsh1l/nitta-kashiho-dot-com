@@ -115,30 +115,124 @@ product:
     description: >
       卵黄ひかえめの生地にたっぷりの生クリームをサンドしたロールケーキ｡蒜山高原SA下り線限定商品です｡
     image: "assets/img/yukino.jpg"
+
 discontinued:
-  # 和菓子
-  - id: nyuka
-    name: 蒜山乳菓
-    category: 和菓子
-
-  # チョコレート
-  - id: whitechoco
-    name: ホワイト・チョコ
-    category: チョコレート
-
-  - id: platechoco
-    name: 板チョコ詰め合わせ
-    category: チョコレート
-
-  - id: jerseychoco
-    name: ジャージーチョコ
-    category: チョコレート
-
-  # 飴
-  - id: milkame
+  - id: milkAme
     name: 牛乳あめ
     category: 飴
+    description: >
+      緑あやなす蒜山高原でノンビリと草をはむ牛達。蒜山にはジャージー種という乳牛がたくさん放牧されています。そのジャージーのお母さんのミルクを少しわけてもらい、おいしい飴を作りました。
+    note: 製造販売終了
+    image: "assets/img/discontinued/milkame.jpg"
 
-  - id: butterame
+  - id: butterAme
     name: バターあめ
     category: 飴
+    description: >
+      昔懐かしいバター飴の風味。ジャージー牛乳のまろやかさが特徴でした。
+    note: 製造販売終了
+    image: "assets/img/discontinued/batar02.jpg"
+
+  - id: whiteChoco
+    name: ホワイト・チョコ
+    category: チョコレート
+    description: >
+      人気がとても高いホワイト・チョコレート。蒜山の澄んだ青空と白い雲を彷彿とさせるホワイティなチョコレートに仕立てました。
+    note: 製造販売終了
+    image: "assets/img/discontinued/chocolate_white.jpg"
+
+  - id: plateChocoSet
+    name: 板チョコ詰め合わせ
+    category: チョコレート
+    description: >
+      6種類の風味を楽しめる特選ホワイトチョコレートの詰め合わせ。フレッシュミルク、マスカット、メロン、ピーチ、ヨーグルト、ワインの香りを詰め込みました。
+    note: 製造販売終了
+    image: "assets/img/discontinued/chocolate_select6.jpg"
+
+  - id: jerseyChoco
+    name: ジャージーホワイトチョコ
+    category: チョコレート
+    description: >
+      ジャージー牛乳を使ったホワイトチョコレート。板チョコタイプでした。
+    note: 製造販売終了
+    image: "assets/img/discontinued/jerseywhite_chocolate.jpg"
+
+  - id: melonChoco
+    name: メロンチョコ
+    category: チョコレート
+    description: >
+      ジャージー牛乳を使ったホワイトチョコに、味わい豊かなメロンの香りを加えた人気のチョコレート。
+    note: 製造販売終了
+    image: "assets/img/discontinued/chocolate_melon.jpg"
+
+  - id: muscatChoco
+    name: マスカットチョコ
+    category: チョコレート
+    description: >
+      ジャージー牛乳を使ったホワイトチョコに、滋味深いマスカットの香りを加えた人気のチョコレート。
+    note: 製造販売終了
+    image: "assets/img/discontinued/chocolate_muscat.jpg"
+
+  - id: peachChoco
+    name: ピーチチョコ
+    category: チョコレート
+    description: >
+      ジャージー牛乳を使ったホワイトチョコに、豊潤なピーチの香りを加えた大人気のチョコレート。
+    note: 製造販売終了
+    image: "assets/img/discontinued/chocolate_peach.jpg"
+
+  - id: namaChoco
+    name: 生チョコレート
+    category: チョコレート
+    description: >
+      ヨーグルト風味の生チョコレート。手作りのガナッシュで限定生産していました。
+    note: 製造販売終了
+    image: "assets/img/discontinued/nama_chocolate.jpg"
+
+  - id: milkManju
+    name: 牛乳まんじゅう
+    category: 和菓子
+    description: >
+      牛乳を使ったまんじゅう。ジャージー牛乳の風味が特徴の懐かしい和菓子でした。
+    note: 製造販売終了
+    image: "assets/img/discontinued/milkmanzyuu_1.jpg"
+
+  - id: hiruzenNikki
+    name: ひるぜん日記
+    category: 和菓子
+    description: >
+      おだやかな風味の茶請け。憩いのひと時に最適な和菓子でした。
+    note: 製造販売終了
+    image: "assets/img/discontinued/hiruzennikki_1.jpg"
+
+  - id: moonlightCake
+    name: ムーンライトケーキ
+    category: 洋菓子
+    description: >
+      月光のようにまろやかな食感のケーキ。
+    note: 製造販売終了
+    image: "assets/img/discontinued/moonlight_image.jpg"
+
+  - id: yuuyakeRoll
+    name: 夕焼けロール
+    category: 洋菓子
+    description: >
+      夕焼けのような温かみのあるロールケーキ。
+    note: 製造販売終了
+    image: "assets/img/discontinued/yuuyake.jpg"
+
+  - id: mixCake
+    name: ミックスケーキ
+    category: 洋菓子
+    description: >
+      複数の味を一度に楽しめる組み合わせケーキ。
+    note: 製造販売終了
+    image: "assets/img/discontinued/mixcake.jpg"
+
+  - id: battaCake
+    name: バターケーキ
+    category: 洋菓子
+    description: >
+      バターの風味豊かなしっとりケーキ。
+    note: 製造販売終了
+    image: "assets/img/discontinued/battacake.jpg"
