@@ -19,7 +19,7 @@
               <picture>
                 <source srcset="{{ item.image | webp }}" type="image/webp">
                 <img
-                  src="{{ item.image }}"
+                  src="{{ item.image | prepend: '/' }}"
                   alt="{{ item.name }}"
                   class="w-full h-full object-cover"
                   loading="lazy"
