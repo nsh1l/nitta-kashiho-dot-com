@@ -3,8 +3,6 @@
     <picture>
       <source srcset="/{{ info.heroImage | webp }}" type="image/webp">
       <img
-        x-data="image"
-        x-on:error="handleError($event)"
         src="/{{ info.heroImage }}"
         alt="ヒーロー画像"
         loading="lazy"

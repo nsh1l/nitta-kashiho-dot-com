@@ -17,9 +17,7 @@
                 <picture>
                   <source srcset="{{ resolvedImage | webp }}" type="image/webp">
                   <img
-                    x-data="image"
                     data-fallback="/assets/img/ushi_cyan.jpg"
-                    x-on:error="handleError($event)"
                     src="{{ resolvedImage }}"
                     alt="{{ shop.name }}"
                     class="w-full h-full object-cover object-center"
@@ -61,9 +59,7 @@
             <picture>
               <source srcset="{{ resolvedImage | webp }}" type="image/webp">
               <img
-                x-data="image"
                 data-fallback="/assets/img/ushi_cyan.jpg"
-                x-on:error="handleError($event)"
                 src="{{ resolvedImage }}"
                 alt="{{ shop.name }}"
                 class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"

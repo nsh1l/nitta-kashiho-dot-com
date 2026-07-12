@@ -19,8 +19,6 @@
               <picture>
                 <source srcset="{{ item.image | webp }}" type="image/webp">
                 <img
-                  x-data="image"
-                  x-on:error="handleError($event)"
                   src="{{ item.image }}"
                   alt="{{ item.name }}"
                   class="w-full h-full object-cover"
