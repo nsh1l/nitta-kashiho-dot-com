@@ -129,7 +129,7 @@ discontinued:
     name: バターあめ
     category: 飴
     description: >
-      昔懐かしいバター飴の風味。ジャージー牛乳のまろやかさが特徴でした。
+      昔懐かしいバター飴の風味。ジャージー牛乳のまろやかさが特徴です。
     note: 製造販売終了
     image: "assets/img/discontinued/batar02.jpg"
 
@@ -153,7 +153,7 @@ discontinued:
     name: ジャージーホワイトチョコ
     category: チョコレート
     description: >
-      ジャージー牛乳を使ったホワイトチョコレート。板チョコタイプでした。
+      ジャージー牛乳を使ったホワイトチョコレート。板チョコタイプです。
     note: 製造販売終了
     image: "assets/img/discontinued/jerseywhite_chocolate.jpg"
 
@@ -193,7 +193,7 @@ discontinued:
     name: 牛乳まんじゅう
     category: 和菓子
     description: >
-      牛乳を使ったまんじゅう。ジャージー牛乳の風味が特徴の懐かしい和菓子でした。
+      牛乳を使ったまんじゅう。ジャージー牛乳の風味が特徴の懐かしい和菓子です。
     note: 製造販売終了
     image: "assets/img/discontinued/milkmanzyuu_1.jpg"
 
@@ -201,7 +201,7 @@ discontinued:
     name: ひるぜん日記
     category: 和菓子
     description: >
-      おだやかな風味の茶請け。憩いのひと時に最適な和菓子でした。
+      おだやかな風味の茶請け。憩いのひと時に最適な和菓子です。
     note: 製造販売終了
     image: "assets/img/discontinued/hiruzennikki_1.jpg"
 
