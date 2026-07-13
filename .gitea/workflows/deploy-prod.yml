@@ -26,6 +26,8 @@ jobs:
       - name: Install dependencies
         working-directory: repo
         run: bun install --frozen-lockfile
+      - name: Verify font build dependency
+        run: python3 -c 'import fontTools; print(fontTools.__version__)'
       - name: Build site
         working-directory: repo
         run: bun run deploy
@@ -33,7 +35,7 @@ jobs:
         working-directory: repo
         run: |
           ssh -p 10022 nittakashiho@nitta-kashiho.com \
-            'mkdir -p /home/nittakashiho/backups && tar -C /home/nittakashiho/nitta-kashiho.com/public_html --exclude=./dev --exclude=./new --exclude=./legacy --exclude=./old -czf /home/nittakashiho/backups/nitta-kashiho-public_html-$(date +%Y%m%d-%H%M%S).tar.gz .'
+            'set -eu; mkdir -p /home/nittakashiho/backups; backup=/home/nittakashiho/backups/nitta-kashiho-public_html-$(date +%Y%m%d-%H%M%S).tar.gz; tar -C /home/nittakashiho/nitta-kashiho.com/public_html --exclude=./dev --exclude=./new --exclude=./legacy --exclude=./old -czf "$backup" .; tar -tzf "$backup" >/dev/null; printf "Verified backup: %s\n" "$backup"'
           rsync -az --delete \
             --exclude='/dev/' \
             --exclude='/new/' \
@@ -42,17 +44,3 @@ jobs:
             -e 'ssh -p 10022' \
             _site/ \
             nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/
-      - name: Deploy mirror to new subdomain with 301 redirect
-        working-directory: repo
-        run: |
-          cp src/_htaccess-redirect _site/.htaccess
-          rsync -az --delete -e 'ssh -p 10022' \
-            _site/ \
-            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/new/
-      - name: Deploy dev subdomain with 301 redirect
-        working-directory: repo
-        run: |
-          cp src/_htaccess-redirect _site/.htaccess
-          rsync -az --delete -e 'ssh -p 10022' \
-            _site/ \
-            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/dev/

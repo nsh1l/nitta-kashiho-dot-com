@@ -5,6 +5,7 @@
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^6.0.4",
     "@shopify/liquid-html-parser": "^2.9.2",
     "@shopify/prettier-plugin-liquid": "^1.10.3",
     "@tailwindcss/cli": "^4.3.1",
@@ -15,11 +16,14 @@
     "yaml": "^2.9.0"
   },
   "scripts": {
+    "clean": "rm -rf _site",
     "build:css": "tailwindcss -i ./src/global.css -o ./src/assets/css/global.css",
+    "build:fonts": "python3 scripts/subset-fonts.py",
     "serve:css": "tailwindcss -i ./src/global.css -o ./src/assets/css/global.css --watch",
     "build:site": "eleventy",
     "serve:site": "eleventy --serve",
-    "deploy": "bun run-s build:css build:site",
+    "deploy": "bun run-s clean build:css build:site build:fonts verify:build",
+    "verify:build": "python3 scripts/verify-build.py",
     "serve": "bun run-p serve:css serve:site"
   }
 }

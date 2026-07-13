@@ -8,7 +8,7 @@
     かつて新田菓子舗で販売していた商品たちです。お客様との思い出とともに、ここで残しております。
   </p>
 
-  {% assign grouped = products.discontinued | group_by: "category" %}
+  {% assign grouped = products.discontinued | group_by: 'category' %}
 
   {% for group in grouped %}
     <div class="mb-12 last:mb-0">
@@ -29,6 +29,8 @@
                 alt="{{ item.name }}"
                 class="w-full h-full object-cover"
                 loading="lazy"
+                eleventy:widths="160,320"
+                sizes="(min-width: 640px) calc((min(100vw, 64rem) - 3.5rem) / 6), calc((100vw - 2rem) / 3)"
               >
             </button>
             <div class="flex flex-col justify-between p-3 w-2/3">
@@ -39,9 +41,9 @@
                 {% endif %}
               </div>
               {% if item.description %}
-              <div class="mt-2">
-                <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
-              </div>
+                <div class="mt-2">
+                  <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
+                </div>
               {% endif %}
             </div>
           </div>
@@ -61,11 +63,14 @@
         type="button"
         class="absolute -top-10 right-0 text-white text-sm"
         @click="open = false"
-      >閉じる ✕</button>
+      >
+        閉じる ✕
+      </button>
       <img
         :src="src"
         :alt="alt"
         class="w-full max-h-[80vh] object-contain rounded-lg bg-white"
+        eleventy:ignore
       >
     </div>
   </div>

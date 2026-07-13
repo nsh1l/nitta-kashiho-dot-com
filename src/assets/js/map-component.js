@@ -7,17 +7,71 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+let mapLibrePromise;
+
+function loadMapLibre() {
+  if (window.maplibregl) return Promise.resolve(window.maplibregl);
+  if (mapLibrePromise) return mapLibrePromise;
+
+  mapLibrePromise = new Promise((resolve, reject) => {
+    const existingScript = document.querySelector("script[data-maplibre]");
+    const script = existingScript || document.createElement("script");
+
+    script.addEventListener("load", () => resolve(window.maplibregl), {
+      once: true,
+    });
+    script.addEventListener(
+      "error",
+      () => reject(new Error("MapLibre GL JS failed to load.")),
+      { once: true },
+    );
+
+    if (!existingScript) {
+      script.src = "/assets/vendor/maplibre-gl/maplibre-gl-csp.js";
+      script.async = true;
+      script.dataset.maplibre = "";
+      document.head.append(script);
+    }
+  });
+
+  return mapLibrePromise;
+}
+
 function registerMapComponent() {
   if (!window.Alpine) return;
 
   window.Alpine.data("mapComponent", () => ({
     map: null,
+    intersectionObserver: null,
     resizeObserver: null,
 
     init() {
       this.$nextTick(() => {
-        this.mountMap();
+        if (!("IntersectionObserver" in window)) {
+          this.loadAndMountMap();
+          return;
+        }
+
+        this.intersectionObserver = new IntersectionObserver(
+          (entries) => {
+            if (!entries.some((entry) => entry.isIntersecting)) return;
+
+            this.intersectionObserver.disconnect();
+            this.loadAndMountMap();
+          },
+          { rootMargin: "200px" },
+        );
+        this.intersectionObserver.observe(this.$el);
       });
+    },
+
+    async loadAndMountMap() {
+      try {
+        await loadMapLibre();
+        this.mountMap();
+      } catch (error) {
+        console.error("MapLibre loading error:", error);
+      }
     },
 
     mountMap() {
@@ -40,8 +94,10 @@ function registerMapComponent() {
         return;
       }
 
-      if (typeof maplibregl.setWorkerUrl === "function") {
-        maplibregl.setWorkerUrl("/assets/vendor/maplibre-gl/maplibre-gl-csp-worker.js");
+      if (typeof window.maplibregl.setWorkerUrl === "function") {
+        window.maplibregl.setWorkerUrl(
+          "/assets/vendor/maplibre-gl/maplibre-gl-csp-worker.js",
+        );
       }
 
       const popupHtml = [
@@ -50,7 +106,7 @@ function registerMapComponent() {
       ].join("<br>");
 
       try {
-        this.map = new maplibregl.Map({
+        this.map = new window.maplibregl.Map({
           container,
           style: {
             version: 8,
@@ -81,13 +137,13 @@ function registerMapComponent() {
           zoom: 14,
         });
 
-        const popup = new maplibregl.Popup({
+        const popup = new window.maplibregl.Popup({
           closeButton: false,
           closeOnClick: false,
           offset: 25,
         }).setHTML(popupHtml);
 
-        new maplibregl.Marker({ color: "#d97706" })
+        new window.maplibregl.Marker({ color: "#d97706" })
           .setLngLat([lng, lat])
           .setPopup(popup)
           .addTo(this.map)

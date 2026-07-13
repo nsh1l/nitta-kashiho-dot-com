@@ -1,8 +1,9 @@
 <section class="px-4 py-12 max-w-5xl mx-auto">
   <h2 class="mb-8 text-2xl font-semibold text-center">商品</h2>
 
-  {% assign grouped = products.product | group_by: "category" %}
-  {% assign toggle_threshold = 50 %}{% comment %}文字数がこの値より大きいと「もっと見る」表示{% endcomment %}
+  {% assign grouped = products.product | group_by: 'category' %}
+  {% assign toggle_threshold = 50 -%}
+  {% comment %}文字数がこの値より大きいと「もっと見る」表示{% endcomment %}
 
   {% for group in grouped %}
     <div class="mb-12 last:mb-0">
@@ -23,6 +24,8 @@
                   alt="{{ item.name }}"
                   class="w-full h-full object-cover"
                   loading="lazy"
+                  eleventy:widths="160,320"
+                  sizes="(min-width: 640px) calc((min(100vw, 64rem) - 3.5rem) / 6), calc((100vw - 2rem) / 3)"
                 >
               </picture>
             </div>
@@ -31,7 +34,9 @@
                 <h4 class="text-sm font-medium text-gray-900 mb-1">{{ item.name }}</h4>
                 {% for variant in item.variant %}
                   <div class="text-xs tabular-nums text-gray-600">
-                    {{ variant.price -}} 円 / {{ variant.piece -}}{{ variant.unit }}
+                    {{ variant.price -}}
+                    円 / {{ variant.piece -}}
+                    {{ variant.unit }}
                   </div>
                 {% endfor %}
                 {% if item.shelfLife %}
@@ -41,25 +46,25 @@
                 {% endif %}
               </div>
               {% if long_desc %}
-              <div x-data="{ expanded: false }" class="mt-2">
-                <div
-                  @click="expanded = !expanded"
-                  class="overflow-hidden transition-all duration-500 ease-in-out cursor-pointer select-none"
-                  :style="expanded ? 'max-height: 300px; opacity: 1;' : 'max-height: 3.5em; opacity: 0.7;'"
-                >
+                <div x-data="{ expanded: false }" class="mt-2">
+                  <div
+                    @click="expanded = !expanded"
+                    class="overflow-hidden transition-all duration-500 ease-in-out cursor-pointer select-none"
+                    :style="expanded ? 'max-height: 300px; opacity: 1;' : 'max-height: 3.5em; opacity: 0.7;'"
+                  >
+                    <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
+                  </div>
+                  <button
+                    @click="expanded = !expanded"
+                    class="text-[10px] text-baked-400 hover:text-baked-600 mt-0.5 cursor-pointer transition-opacity duration-300"
+                    :style="expanded ? 'opacity: 1;' : 'opacity: 0.7;'"
+                    x-text="expanded ? '閉じる ▲' : 'もっと見る ▼'"
+                  ></button>
+                </div>
+              {% else %}
+                <div class="mt-2">
                   <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
                 </div>
-                <button
-                  @click="expanded = !expanded"
-                  class="text-[10px] text-baked-400 hover:text-baked-600 mt-0.5 cursor-pointer transition-opacity duration-300"
-                  :style="expanded ? 'opacity: 1;' : 'opacity: 0.7;'"
-                  x-text="expanded ? '閉じる ▲' : 'もっと見る ▼'"
-                ></button>
-              </div>
-              {% else %}
-              <div class="mt-2">
-                <p class="text-xs text-gray-500 leading-relaxed">{{ item.description }}</p>
-              </div>
               {% endif %}
             </div>
           </div>

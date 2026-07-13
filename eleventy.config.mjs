@@ -1,3 +1,4 @@
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import YAML from "yaml";
 import markdown from "markdown-it";
 import fs from "fs";
@@ -8,7 +9,26 @@ export default function (eleventyConfig) {
   eleventyConfig.setOutputDirectory("_site");
   eleventyConfig.setIncludesDirectory("_includes");
   eleventyConfig.setDataDirectory("_data");
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "auto"],
+    widths: ["auto"],
+    svgShortCircuit: true,
+    htmlOptions: {
+      imgAttributes: {
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
+  });
+  eleventyConfig.addPassthroughCopy("src/assets/css");
+  eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/vendor");
+  eleventyConfig.addPassthroughCopy("src/assets/fonts/line-seed-jp.css");
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/img/logo.svg": "assets/img/logo.svg",
+    "src/assets/img/souffle.jpg": "assets/img/souffle.jpg",
+    "src/assets/img/ushi_cyan.jpg": "assets/img/ushi_cyan.jpg",
+  });
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.setServerOptions({
     port: 4722,
@@ -48,7 +68,9 @@ export default function (eleventyConfig) {
     }),
   );
 
-  eleventyConfig.addFilter("webp", (path) => path.replace(/\.(jpg|jpeg|png)$/i, ".webp"));
+  eleventyConfig.addFilter("webp", (path) =>
+    path.replace(/\.(jpg|jpeg|png)$/i, ".webp"),
+  );
 
   eleventyConfig.addFilter("resolveShopImage", (imgPath) => {
     if (!imgPath) return "/assets/img/ushi_cyan.jpg";
@@ -61,6 +83,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateToRfc3339", (date) => {
     if (!date) return new Date().toISOString();
-    return date instanceof Date ? date.toISOString() : new Date(date).toISOString();
+    return date instanceof Date
+      ? date.toISOString()
+      : new Date(date).toISOString();
   });
 }

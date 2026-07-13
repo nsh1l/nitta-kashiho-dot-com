@@ -1,6 +1,6 @@
 document.addEventListener("alpine:init", () => {
   window.Alpine.data("image", () => ({
-    fallback: "/assets/img/404.jpg",
+    fallback: "/assets/img/ushi_cyan.jpg",
 
     handleError(e) {
       const el = e.target;

@@ -3,5 +3,5 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/line-seed-jp-400.ttf") format("truetype");
+  src: url("/assets/fonts/line-seed-jp-400.woff2") format("woff2");
 }

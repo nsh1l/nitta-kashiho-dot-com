@@ -22,6 +22,8 @@
                     alt="{{ shop.name }}"
                     class="w-full h-full object-cover object-center"
                     loading="lazy"
+                    eleventy:widths="320,640,1024"
+                    sizes="min(100vw - 2rem, 32rem)"
                   >
                 </picture>
               </div>
@@ -32,14 +34,18 @@
                 class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-white shadow-md transition-colors"
                 aria-label="前の画像"
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
               </button>
               <button
                 @click="idx = (idx + 1) % total"
                 class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-white shadow-md transition-colors"
                 aria-label="次の画像"
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
               </button>
               <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
                 {% for img in shop.images %}
@@ -64,6 +70,8 @@
                 alt="{{ shop.name }}"
                 class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
+                eleventy:widths="320,640,1024"
+                sizes="min(100vw - 2rem, 32rem)"
               >
             </picture>
           </div>
@@ -97,7 +105,12 @@
           <dd class="sm:col-span-3 text-gray-900 flex flex-col sm:flex-row sm:items-center gap-2">
             <span>{{ shop.address }}</span>
             {% if shop.mapUrl %}
-              <a href="{{ shop.mapUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-spring-700 hover:underline gap-1">
+              <a
+                href="{{ shop.mapUrl }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-xs text-spring-700 hover:underline gap-1"
+              >
                 地図を見る ↗
               </a>
             {% endif %}
@@ -106,7 +119,9 @@
           {% if shop.tel %}
             <dt class="font-medium text-gray-500">お電話</dt>
             <dd class="sm:col-span-3 text-gray-900">
-              <a href="tel:{{ shop.tel }}" class="hover:underline text-spring-700 sm:text-gray-900 sm:no-underline">{{ shop.tel }}</a>
+              <a href="tel:{{ shop.tel }}" class="hover:underline text-spring-700 sm:text-gray-900 sm:no-underline">
+                {{- shop.tel -}}
+              </a>
             </dd>
           {% endif %}
 
