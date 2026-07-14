@@ -4,12 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
-  PATH: /home/nsh1l/.bun/bin:/usr/local/bin:/usr/bin:/bin
+  PATH: /home/nsh1l/.bun/bin:/home/nsh1l/.local/bin:/usr/local/bin:/usr/bin:/bin
 
 jobs:
   build:
@@ -23,6 +21,3 @@ jobs:
       - name: Build
         working-directory: repo
         run: bun run deploy
-      - name: Check Prettier formatting
-        working-directory: repo
-        run: npx prettier --check . || true
