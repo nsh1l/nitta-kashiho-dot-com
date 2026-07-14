@@ -1,8 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches: [main]
+on: [push]
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
