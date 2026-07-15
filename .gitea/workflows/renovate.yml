@@ -1,0 +1,26 @@
+name: Renovate
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".gitea/workflows/renovate.yml"
+
+env:
+  PATH: /home/nsh1l/.bun/bin:/home/nsh1l/.local/bin:/usr/local/bin:/usr/bin:/bin
+  RENOVATE_PLATFORM: gitea
+  RENOVATE_ENDPOINT: http://localhost:3000/api/v1
+  RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+  RENOVATE_REPOSITORIES: '["nsh1l/nitta-kashiho-dot-com"]'
+  RENOVATE_ONBOARDING: "false"
+  RENOVATE_REQUIRE_CONFIG: required
+  LOG_LEVEL: info
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Renovate
+        run: bunx renovate
