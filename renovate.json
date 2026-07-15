@@ -3,6 +3,7 @@
   "extends": ["config:recommended"],
   "dependencyDashboard": false,
   "automerge": false,
+  "timezone": "Asia/Tokyo",
   "schedule": ["before 5am on Monday"],
   "rangeStrategy": "replace",
   "prConcurrentLimit": 2,
