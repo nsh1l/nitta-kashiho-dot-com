@@ -6,11 +6,5 @@
   "schedule": ["before 5am on Monday"],
   "rangeStrategy": "replace",
   "prConcurrentLimit": 2,
-  "prHourlyLimit": 1,
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["major"],
-      "enabled": false
-    }
-  ]
+  "prHourlyLimit": 1
 }
