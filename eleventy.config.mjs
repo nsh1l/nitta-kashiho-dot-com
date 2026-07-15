@@ -28,6 +28,7 @@ export default function (eleventyConfig) {
     "src/assets/img/logo.svg": "assets/img/logo.svg",
     "src/assets/img/souffle.jpg": "assets/img/souffle.jpg",
     "src/assets/img/ushi_cyan.jpg": "assets/img/ushi_cyan.jpg",
+    "src/assets/img/fathers-sunflower.webp": "assets/img/fathers-sunflower.webp",
   });
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.setServerOptions({

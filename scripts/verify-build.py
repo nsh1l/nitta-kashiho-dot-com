@@ -11,7 +11,12 @@ from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = ROOT / "_site"
-PUBLIC_IMAGES = {"logo.svg", "souffle.jpg", "ushi_cyan.jpg"}
+PUBLIC_IMAGES = {
+    "fathers-sunflower.webp",
+    "logo.svg",
+    "souffle.jpg",
+    "ushi_cyan.jpg",
+}
 ROOT_REFERENCE = re.compile(r"['\"](/(?:assets|img)/[^'\"\s)]+)")
 
 
