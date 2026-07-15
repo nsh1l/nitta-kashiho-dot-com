@@ -7,10 +7,7 @@ on:
         description: "本番サイトにデプロイします。「deploy」と入力してください"
         required: true
         default: ""
-  push:
-    branches: [main]
-    paths-ignore:
-      - "_site/**"
+
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
@@ -19,7 +16,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event.inputs.confirm == 'deploy'
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.confirm == 'deploy'
     steps:
       - name: Checkout repository
         run: git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
