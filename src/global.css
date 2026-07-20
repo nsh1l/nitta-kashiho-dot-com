@@ -68,73 +68,50 @@
   --color-spring-900: oklch(22.81% 0.025 153.81);
   --color-spring-950: oklch(18.89% 0.018 155.12);
 }
-@layer components {
-  .writing-vertical-rl {
-    writing-mode: vertical-rl;
-  }
-  .writing-vertical-lr {
-    writing-mode: vertical-lr;
-  }
-  .writing-horizontal-tb {
-    writing-mode: horizontal-tb;
+/* Third-party MapLibre markup cannot receive utility classes. */
+.maplibregl-popup-content {
+  @apply text-sm leading-snug;
+}
+.maplibregl-popup-content strong {
+  @apply block text-base font-semibold;
+}
+
+/* Alpine.js needs this before it mounts. */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Native cross-document transitions: unsupported browsers keep normal navigation. */
+@supports (view-transition-name: root) {
+  @view-transition {
+    navigation: auto;
   }
 
-  .document-container {
-    @apply mx-auto grid max-w-5xl gap-6 px-4 py-6;
-    grid-template-columns: minmax(3rem, 5.5rem) minmax(0, 1fr);
-  }
-  .document-title-column {
-    @apply flex items-center justify-center;
-  }
-  .document-title {
-    @apply text-base font-semibold text-gray-900;
-    letter-spacing: 0.35em;
-    text-orientation: mixed;
-  }
-  .document-body {
-    @apply max-w-4xl;
-  }
-  .document-body-inner {
-    @apply space-y-4;
-  }
-  .document-body h1:first-of-type {
-    @apply hidden;
-  }
-  .document-body h2 {
-    @apply text-2xl leading-tight font-bold;
-  }
-  .document-body p {
-    @apply my-4 leading-relaxed;
-  }
-  .document-body ul,
-  .document-body ol {
-    @apply ml-4 list-disc space-y-2;
-  }
-  .leaflet-container {
-    overflow: hidden;
-    border-radius: 0.5rem;
-  }
-  /* MapLibre GL JS overrides */
-  .maplibregl-popup-content {
-    @apply text-sm leading-snug;
-  }
-  .maplibregl-popup-content strong {
-    @apply block text-base font-semibold;
+  ::view-transition-old(root) {
+    animation: 180ms ease-out both page-fade-out;
   }
 
-  @media (max-width: 768px) {
-    .document-container {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-    .document-title {
-      writing-mode: horizontal-tb;
-      letter-spacing: 0.1em;
-    }
+  ::view-transition-new(root) {
+    animation: 260ms ease-out both page-fade-in;
   }
 }
 
-/* Alpine.js x-cloak */
-[x-cloak] {
-  display: none !important;
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

@@ -7,7 +7,7 @@ ogImage: /assets/img/souffle-making/freshly-baked-poster.jpeg
 <main class="overflow-hidden bg-[#fffdf8] text-stone-800">
   <section class="relative isolate min-h-[min(760px,100svh)] bg-stone-900">
     <video
-      class="absolute inset-0 -z-10 h-full w-full object-cover"
+      class="absolute inset-0 -z-10 h-full w-full object-cover motion-reduce:hidden"
       autoplay
       muted
       loop
@@ -21,12 +21,17 @@ ogImage: /assets/img/souffle-making/freshly-baked-poster.jpeg
     <div class="mx-auto flex min-h-[min(760px,100svh)] max-w-6xl items-end px-5 py-12 sm:px-8 sm:py-16">
       <div class="max-w-xl text-white">
         <p class="mb-4 text-xs font-semibold tracking-[0.28em] text-sunflower-200">HIRUZEN SOUFFLÉ CHEESECAKE</p>
-        <h1 class="text-4xl leading-tight font-semibold sm:text-6xl">焼きたては、<br>ぷるぷる。</h1>
+        <h1 class="text-4xl leading-tight font-semibold sm:text-6xl">
+          焼きたては、<br>
+          ぷるぷる。
+        </h1>
         <p class="mt-6 max-w-md text-sm leading-7 text-stone-100 sm:text-base">
-          クリームチーズと蒜山ジャージー牛乳をたっぷり使い、
-          小麦粉も膨張剤も使わずに焼き上げるスフレチーズケーキです。
+          クリームチーズと蒜山ジャージー牛乳をたっぷり使い、 小麦粉も膨張剤も使わずに焼き上げるスフレチーズケーキです。
         </p>
-        <a href="#story" class="mt-8 inline-flex rounded-full border border-white/70 px-5 py-3 text-sm font-medium transition hover:bg-white hover:text-stone-900">
+        <a
+          href="#story"
+          class="mt-8 inline-flex rounded-full border border-white/70 px-5 py-3 text-sm font-medium transition hover:bg-white hover:text-stone-900"
+        >
           できあがるまでを見る
         </a>
       </div>
@@ -35,7 +40,10 @@ ogImage: /assets/img/souffle-making/freshly-baked-poster.jpeg
 
   <section class="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
     <p class="text-xs font-semibold tracking-[0.24em] text-baked-700">MADE FRESH, IN SMALL BATCHES</p>
-    <h2 class="mt-4 text-3xl leading-snug font-semibold text-stone-900 sm:text-4xl">ふくらんで、しぼむ。<br>それも、このケーキらしさです。</h2>
+    <h2 class="mt-4 text-3xl leading-snug font-semibold text-stone-900 sm:text-4xl">
+      ふくらんで、しぼむ。<br>
+      それも、このケーキらしさです。
+    </h2>
     <p class="mx-auto mt-7 max-w-2xl text-sm leading-8 text-stone-600 sm:text-base">
       小麦粉や膨張剤に頼らないため、時間が経つと少しずつ背が低くなります。
       でもそれは、焼きたての軽やかさが本物であるしるし。温めると、ふんわり感がある程度よみがえります。
@@ -47,37 +55,87 @@ ogImage: /assets/img/souffle-making/freshly-baked-poster.jpeg
       <div class="max-w-2xl">
         <p class="text-xs font-semibold tracking-[0.24em] text-baked-700">THE MAKING OF</p>
         <h2 class="mt-3 text-3xl font-semibold text-stone-900 sm:text-4xl">一台ずつ、手の仕事で。</h2>
-        <p class="mt-5 text-sm leading-8 text-stone-600 sm:text-base">毎回手作り。冷凍保存の作り置きではなく、その日のケーキを丁寧に仕上げます。</p>
+        <p class="mt-5 text-sm leading-8 text-stone-600 sm:text-base">
+          毎回手作り。冷凍保存の作り置きではなく、その日のケーキを丁寧に仕上げます。
+        </p>
       </div>
 
       <ol class="mt-10 grid gap-6 sm:grid-cols-2">
         <li class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200">
           <picture>
             <source srcset="/assets/img/souffle-making/folding-batter.webp" type="image/webp">
-            <img src="/assets/img/souffle-making/folding-batter.jpeg" alt="チーズケーキの生地を混ぜる工程" class="aspect-[4/3] w-full object-cover" loading="lazy" eleventy:ignore>
+            <img
+              src="/assets/img/souffle-making/folding-batter.jpeg"
+              alt="チーズケーキの生地を混ぜる工程"
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              eleventy:ignore
+            >
           </picture>
-          <div class="p-5"><p class="text-xs font-semibold tracking-wider text-baked-700">01</p><h3 class="mt-2 text-lg font-semibold">なめらかに、軽やかに。</h3><p class="mt-2 text-sm leading-7 text-stone-600">材料の持ち味を生かすため、生地の状態を見ながら仕込んでいきます。</p></div>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider text-baked-700">01</p>
+            <h3 class="mt-2 text-lg font-semibold">なめらかに、軽やかに。</h3>
+            <p class="mt-2 text-sm leading-7 text-stone-600">
+              材料の持ち味を生かすため、生地の状態を見ながら仕込んでいきます。
+            </p>
+          </div>
         </li>
         <li class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200">
           <picture>
             <source srcset="/assets/img/souffle-making/pouring-batter.webp" type="image/webp">
-            <img src="/assets/img/souffle-making/pouring-batter.jpeg" alt="生地をケーキ型へ流し入れる工程" class="aspect-[4/3] w-full object-cover" loading="lazy" eleventy:ignore>
+            <img
+              src="/assets/img/souffle-making/pouring-batter.jpeg"
+              alt="生地をケーキ型へ流し入れる工程"
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              eleventy:ignore
+            >
           </picture>
-          <div class="p-5"><p class="text-xs font-semibold tracking-wider text-baked-700">02</p><h3 class="mt-2 text-lg font-semibold">型へ、そっと。</h3><p class="mt-2 text-sm leading-7 text-stone-600">やわらかな生地を一台ずつ型へ。焼き上がりを思いながら整えます。</p></div>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider text-baked-700">02</p>
+            <h3 class="mt-2 text-lg font-semibold">型へ、そっと。</h3>
+            <p class="mt-2 text-sm leading-7 text-stone-600">
+              やわらかな生地を一台ずつ型へ。焼き上がりを思いながら整えます。
+            </p>
+          </div>
         </li>
         <li class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200">
           <picture>
             <source srcset="/assets/img/souffle-making/oven-ready.webp" type="image/webp">
-            <img src="/assets/img/souffle-making/oven-ready.jpeg" alt="焼成前のスフレチーズケーキが並ぶ様子" class="aspect-[4/3] w-full object-cover" loading="lazy" eleventy:ignore>
+            <img
+              src="/assets/img/souffle-making/oven-ready.jpeg"
+              alt="焼成前のスフレチーズケーキが並ぶ様子"
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              eleventy:ignore
+            >
           </picture>
-          <div class="p-5"><p class="text-xs font-semibold tracking-wider text-baked-700">03</p><h3 class="mt-2 text-lg font-semibold">オーブンへ。</h3><p class="mt-2 text-sm leading-7 text-stone-600">お湯を張ったバットと一緒にオーブンに入れることで、蒸し焼きにしています。</p></div>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider text-baked-700">03</p>
+            <h3 class="mt-2 text-lg font-semibold">オーブンへ。</h3>
+            <p class="mt-2 text-sm leading-7 text-stone-600">
+              お湯を張ったバットと一緒にオーブンに入れることで、蒸し焼きにしています。
+            </p>
+          </div>
         </li>
         <li class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200">
           <picture>
             <source srcset="/assets/img/souffle-making/baking.webp" type="image/webp">
-            <img src="/assets/img/souffle-making/baking.jpeg" alt="オーブンのなかで焼き上がるスフレチーズケーキ" class="aspect-[4/3] w-full object-cover" loading="lazy" eleventy:ignore>
+            <img
+              src="/assets/img/souffle-making/baking.jpeg"
+              alt="オーブンのなかで焼き上がるスフレチーズケーキ"
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              eleventy:ignore
+            >
           </picture>
-          <div class="p-5"><p class="text-xs font-semibold tracking-wider text-baked-700">04</p><h3 class="mt-2 text-lg font-semibold">じっくり、ふくらむ。</h3><p class="mt-2 text-sm leading-7 text-stone-600">オーブンのなかで、表面に焼き色をまといながら、ゆっくりと育ちます。</p></div>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider text-baked-700">04</p>
+            <h3 class="mt-2 text-lg font-semibold">じっくり、ふくらむ。</h3>
+            <p class="mt-2 text-sm leading-7 text-stone-600">
+              オーブンのなかで、表面に焼き色をまといながら、ゆっくりと育ちます。
+            </p>
+          </div>
         </li>
       </ol>
     </div>
@@ -88,16 +146,25 @@ ogImage: /assets/img/souffle-making/freshly-baked-poster.jpeg
       <p class="text-xs font-semibold tracking-[0.24em] text-sunflower-200">SMALL BATCH, LIMITED AVAILABILITY</p>
       <h2 class="mt-4 text-3xl font-semibold">数量限定で、お届けしています。</h2>
       <div class="mt-7 grid gap-6 border-t border-white/20 pt-7 sm:grid-cols-2">
-        <div><h3 class="font-medium">蒜山スフレチーズケーキ</h3><p class="mt-2 text-sm text-stone-300">5.5号　1,700円</p></div>
-        <div><h3 class="font-medium">おいしく食べるために</h3><p class="mt-2 text-sm leading-7 text-stone-300">賞味期限は10日です。夏季は要冷蔵。時間が経ってふくらみが落ちたときは、電子レンジで温めるとふんわり感がある程度戻ります。</p></div>
+        <div>
+          <h3 class="font-medium">蒜山スフレチーズケーキ</h3>
+          <p class="mt-2 text-sm text-stone-300">5.5号 1,700円</p>
+        </div>
+        <div>
+          <h3 class="font-medium">おいしく食べるために</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-300">
+            賞味期限は10日です。夏季は要冷蔵。時間が経ってふくらみが落ちたときは、電子レンジで温めるとふんわり感がある程度戻ります。
+          </p>
+        </div>
       </div>
-      <p class="mt-7 text-sm leading-7 text-stone-300">手作りの限定品のため、販売は選ばれた店舗に限られます。取扱状況は各販売店へご確認ください。</p>
-      <a href="/shops/" class="mt-8 inline-flex rounded-full bg-sunflower-300 px-5 py-3 text-sm font-semibold text-stone-900 transition hover:bg-sunflower-200">取扱店・販売店を見る</a>
+      <p class="mt-7 text-sm leading-7 text-stone-300">
+        手作りの限定品のため、販売は選ばれた店舗に限られます。取扱状況は各販売店へご確認ください。
+      </p>
+      <a
+        href="/shops/"
+        class="mt-8 inline-flex rounded-full bg-sunflower-300 px-5 py-3 text-sm font-semibold text-stone-900 transition hover:bg-sunflower-200"
+        >取扱店・販売店を見る</a
+      >
     </div>
   </section>
 </main>
-<style>
-  @media (prefers-reduced-motion: reduce) {
-    video { display: none; }
-  }
-</style>

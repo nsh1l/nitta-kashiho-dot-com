@@ -52,12 +52,21 @@
   </head>
 
   <body>
-    <section class="document-container">
-      <div class="document-title-column">
-        <h1 class="document-title writing-vertical-rl">{{ title }}</h1>
+    <section
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-4 py-6 md:grid-cols-[minmax(3rem,5.5rem)_minmax(0,1fr)]"
+    >
+      <div class="flex items-center justify-center">
+        <h1
+          class="text-base font-semibold tracking-[0.1em] text-gray-900 [text-orientation:mixed] md:tracking-[0.35em] md:[writing-mode:vertical-rl]"
+        >
+          {{ title }}
+        </h1>
       </div>
-      <article class="document-body" aria-label="{{ title }}の本文">
-        <div class="document-body-inner">{{ content | safe }}</div>
+      <article
+        class="max-w-4xl [&_h1:first-of-type]:hidden [&_h2]:text-2xl [&_h2]:leading-tight [&_h2]:font-bold [&_ol]:ml-4 [&_ol]:list-disc [&_ol]:space-y-2 [&_p]:my-4 [&_p]:leading-relaxed [&_ul]:ml-4 [&_ul]:list-disc [&_ul]:space-y-2"
+        aria-label="{{ title }}の本文"
+      >
+        <div class="space-y-4">{{ content | safe }}</div>
       </article>
     </section>
     {% include 'footer.liquid' %}
