@@ -7,9 +7,14 @@
 
   {% for group in grouped %}
     <div class="mb-12 last:mb-0">
-      <h3 class="mb-4 text-lg font-medium text-koshian-700 border-b border-koshian-200 pb-2">
+      <h3 class="mb-2 text-lg font-medium text-koshian-700 border-b border-koshian-200 pb-2">
         {{ group.name }}
       </h3>
+      {% if group.name == '12cmケーキシリーズ' %}
+        <p class="mb-4 text-sm leading-7 text-gray-600">
+          チーズ・ショコラ・ミルク。お求めやすく、食べきりやすい12cmサイズのケーキをそろえました。ご自宅でのおやつにも、ちょっとした手土産にもおすすめです。
+        </p>
+      {% endif %}
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {% for item in group.items %}
