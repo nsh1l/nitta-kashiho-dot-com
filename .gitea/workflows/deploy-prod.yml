@@ -1,13 +1,8 @@
 name: Deploy production site
 
 on:
-  workflow_dispatch:
-    inputs:
-      confirm:
-        description: "本番サイトにデプロイします。「deploy」と入力してください"
-        required: true
-        default: ""
-
+  push:
+    branches: [main]
 
 env:
   BUN_INSTALL: /home/nsh1l/.bun
@@ -16,10 +11,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.confirm == 'deploy'
     steps:
-      - name: Checkout repository
-        run: git clone --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
+      - name: Checkout main
+        run: git clone --branch main --single-branch --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
       - name: Install dependencies
         working-directory: repo
         run: bun install --frozen-lockfile
@@ -28,7 +22,7 @@ jobs:
       - name: Build site
         working-directory: repo
         run: bun run deploy
-      - name: Deploy to production
+      - name: Back up and deploy production
         working-directory: repo
         run: |
           ssh -p 10022 nittakashiho@nitta-kashiho.com \

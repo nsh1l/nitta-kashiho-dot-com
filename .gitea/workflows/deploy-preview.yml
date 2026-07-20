@@ -1,0 +1,31 @@
+name: Deploy preview site
+
+on:
+  push:
+    branches: [preview]
+
+env:
+  BUN_INSTALL: /home/nsh1l/.bun
+  PATH: /home/nsh1l/.bun/bin:/usr/local/bin:/usr/bin:/bin
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout preview
+        run: git clone --branch preview --single-branch --depth=1 "http://localhost:3000/nsh1l/nitta-kashiho-dot-com.git" repo
+      - name: Install dependencies
+        working-directory: repo
+        run: bun install --frozen-lockfile
+      - name: Verify font build dependency
+        run: python3 -c 'import fontTools; print(fontTools.__version__)'
+      - name: Build site
+        working-directory: repo
+        run: bun run deploy
+      - name: Deploy preview
+        working-directory: repo
+        run: |
+          rsync -az --delete \
+            -e 'ssh -p 10022' \
+            _site/ \
+            nittakashiho@nitta-kashiho.com:/home/nittakashiho/nitta-kashiho.com/public_html/dev/
