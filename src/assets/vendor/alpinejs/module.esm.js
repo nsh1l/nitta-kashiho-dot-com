@@ -155,8 +155,9 @@ function onAttributeRemoved(el, name, callback) {
 function cleanupAttributes(el, names) {
   if (!el._x_attributeCleanups)
     return;
+  const nameSet = names === void 0 ? null : new Set(names);
   Object.entries(el._x_attributeCleanups).forEach(([name, value]) => {
-    if (names === void 0 || names.includes(name)) {
+    if (nameSet === null || nameSet.has(name)) {
       value.forEach((i) => i());
       delete el._x_attributeCleanups[name];
     }
@@ -578,13 +579,28 @@ function directives(el, attributes, originalAttributeOverride) {
     attributes = attributes.concat(vAttributes);
   }
   let transformedAttributeMap = {};
-  let directives2 = attributes.map(toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName)).filter(outNonAlpineAttributes).map(toParsedDirectives(transformedAttributeMap, originalAttributeOverride)).sort(byPriority);
+  let directives2 = [];
+  let transformAttribute = toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName);
+  let parseDirective = toParsedDirectives(transformedAttributeMap, originalAttributeOverride);
+  for (let attribute of attributes) {
+    let transformedAttribute = transformAttribute(attribute);
+    if (outNonAlpineAttributes(transformedAttribute))
+      directives2.push(parseDirective(transformedAttribute));
+  }
+  directives2.sort(byPriority);
   return directives2.map((directive2) => {
     return getDirectiveHandler(el, directive2);
   });
 }
 function attributesOnly(attributes) {
-  return Array.from(attributes).map(toTransformedAttributes()).filter((attr) => !outNonAlpineAttributes(attr));
+  let transformedAttributes = [];
+  let transformAttribute = toTransformedAttributes();
+  for (let attribute of attributes) {
+    let transformedAttribute = transformAttribute(attribute);
+    if (!outNonAlpineAttributes(transformedAttribute))
+      transformedAttributes.push(transformedAttribute);
+  }
+  return transformedAttributes;
 }
 var isDeferringHandlers = false;
 var directiveHandlerStacks = /* @__PURE__ */ new Map();
@@ -757,9 +773,10 @@ function start() {
     directives(el, attrs).forEach((handle) => handle());
   });
   let outNestedComponents = (el) => !closestRoot(el.parentElement, true);
-  Array.from(document.querySelectorAll(allSelectors().join(","))).filter(outNestedComponents).forEach((el) => {
-    initTree(el);
-  });
+  for (let el of document.querySelectorAll(allSelectors().join(","))) {
+    if (outNestedComponents(el))
+      initTree(el);
+  }
   dispatch(document, "alpine:initialized");
   setTimeout(() => {
     warnAboutMissingPlugins();
@@ -1398,8 +1415,9 @@ function updateSelect(el, value) {
   const arrayWrappedValue = [].concat(value).map((value2) => {
     return value2 + "";
   });
+  const valueSet = new Set(arrayWrappedValue);
   Array.from(el.options).forEach((option) => {
-    option.selected = arrayWrappedValue.includes(option.value);
+    option.selected = valueSet.has(option.value);
   });
 }
 function camelCase(subject) {
@@ -1543,7 +1561,7 @@ function entangle({ get: outerGet, set: outerSet }, { get: innerGet, set: innerS
   };
 }
 function cloneIfObject(value) {
-  return typeof value === "object" ? JSON.parse(JSON.stringify(value)) : value;
+  return typeof value === "object" ? structuredClone(raw(value)) : value;
 }
 
 // packages/alpinejs/src/plugin.js
@@ -2799,7 +2817,10 @@ function trigger(target, type, key, newValue, oldValue, oldTarget) {
   effects.forEach(run);
 }
 var isNonTrackableKeys = /* @__PURE__ */ makeMap(`__proto__,__v_isRef,__isVue`);
-var builtInSymbols = new Set(Object.getOwnPropertyNames(Symbol).map((key) => Symbol[key]).filter(isSymbol));
+var builtInSymbols = new Set(Object.getOwnPropertyNames(Symbol).flatMap((key) => {
+  let symbol = Symbol[key];
+  return isSymbol(symbol) ? [symbol] : [];
+}));
 var get2 = /* @__PURE__ */ createGetter();
 var readonlyGet = /* @__PURE__ */ createGetter(true);
 var arrayInstrumentations = /* @__PURE__ */ createArrayInstrumentations();
@@ -3612,8 +3633,9 @@ function isClickEvent(event) {
   return ["contextmenu", "click", "mouse"].some((i) => event.includes(i));
 }
 function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {
+  const nonKeyModifiers = new Set(["window", "document", "prevent", "stop", "once", "capture", "self", "away", "outside", "passive", "preserve-scroll", "blur", "change", "lazy"]);
   let keyModifiers = modifiers.filter((i) => {
-    return !["window", "document", "prevent", "stop", "once", "capture", "self", "away", "outside", "passive", "preserve-scroll", "blur", "change", "lazy"].includes(i);
+    return !nonKeyModifiers.has(i);
   });
   if (keyModifiers.includes("debounce")) {
     let debounceIndex = keyModifiers.indexOf("debounce");
@@ -3628,8 +3650,10 @@ function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {
   if (keyModifiers.length === 1 && keyToModifiers(e.key).includes(keyModifiers[0]))
     return false;
   const systemKeyModifiers = ["ctrl", "shift", "alt", "meta", "cmd", "super"];
-  const selectedSystemKeyModifiers = systemKeyModifiers.filter((modifier) => keyModifiers.includes(modifier));
-  keyModifiers = keyModifiers.filter((i) => !selectedSystemKeyModifiers.includes(i));
+  const keyModifierSet = new Set(keyModifiers);
+  const selectedSystemKeyModifiers = systemKeyModifiers.filter((modifier) => keyModifierSet.has(modifier));
+  const selectedSystemKeyModifierSet = new Set(selectedSystemKeyModifiers);
+  keyModifiers = keyModifiers.filter((i) => !selectedSystemKeyModifierSet.has(i));
   if (selectedSystemKeyModifiers.length > 0) {
     const activelyPressedKeyModifiers = selectedSystemKeyModifiers.filter((modifier) => {
       if (modifier === "cmd" || modifier === "super")
@@ -3667,10 +3691,9 @@ function keyToModifiers(key) {
     "underscore": "_"
   };
   modifierToKeyMap[key] = key;
-  return Object.keys(modifierToKeyMap).map((modifier) => {
-    if (modifierToKeyMap[modifier] === key)
-      return modifier;
-  }).filter((modifier) => modifier);
+  return Object.keys(modifierToKeyMap).flatMap((modifier) => {
+    return modifierToKeyMap[modifier] === key ? [modifier] : [];
+  });
 }
 
 // packages/alpinejs/src/directives/x-model.js
