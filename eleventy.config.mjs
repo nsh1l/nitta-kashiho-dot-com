@@ -31,6 +31,7 @@ export default function (eleventyConfig) {
     "src/assets/img/fathers-sunflower.webp": "assets/img/fathers-sunflower.webp",
   });
   eleventyConfig.addPassthroughCopy("src/assets/img/souffle-making");
+  eleventyConfig.addPassthroughCopy("src/assets/img/yukino-roll");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.setServerOptions({
     port: 4722,

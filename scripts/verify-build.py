@@ -27,6 +27,16 @@ PUBLIC_ASSETS = {
     "souffle-making/oven-ready.webp",
     "souffle-making/pouring-batter.jpeg",
     "souffle-making/pouring-batter.webp",
+    "yukino-roll/batch.jpeg",
+    "yukino-roll/batch.webp",
+    "yukino-roll/cream.jpeg",
+    "yukino-roll/cream.webp",
+    "yukino-roll/hero.jpeg",
+    "yukino-roll/hero.webp",
+    "yukino-roll/roll.jpeg",
+    "yukino-roll/roll.webp",
+    "yukino-roll/spread.jpeg",
+    "yukino-roll/spread.webp",
 }
 ROOT_REFERENCE = re.compile(r"['\"](/(?:assets|img)/[^'\"\s)]+)")
 
