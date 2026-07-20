@@ -67,7 +67,7 @@ product:
         price: 700
     shelfLife: 賞味期限は約60日です。
     description: >
-      ホワイトチョコレートとバンホーテンココアを使用したショコラケーキです。
+      チョコレートケーキです。
     image: "assets/img/chocoCake.jpg"
   - id: manju
     name: ヒルゼン高原まんじゅう
@@ -91,7 +91,7 @@ product:
         price: 1700
     shelfLife: 賞味期限は10日です。夏季は要冷蔵です。
     description: >
-      3種類のたっぷりのクリームチーズと蒜山高原特産のジャージー牛乳を使って、じっくりと焼き上げて作った手作りのチーズケーキです。
+      たっぷりのクリームチーズと蒜山高原特産のジャージー牛乳を使って、じっくりと焼き上げて作った手作りのチーズケーキです。
       この商品は手作りの限定の商品の為、選ばれた販売店でしか販売していません。
     image: "assets/img/souffle.jpg"
   - id: hachimitsu

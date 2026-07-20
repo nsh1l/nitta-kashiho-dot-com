@@ -11,11 +11,22 @@ from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = ROOT / "_site"
-PUBLIC_IMAGES = {
+PUBLIC_ASSETS = {
     "fathers-sunflower.webp",
     "logo.svg",
     "souffle.jpg",
     "ushi_cyan.jpg",
+    "souffle-making/baking.jpeg",
+    "souffle-making/baking.webp",
+    "souffle-making/folding-batter.jpeg",
+    "souffle-making/folding-batter.webp",
+    "souffle-making/freshly-baked-poster.jpeg",
+    "souffle-making/freshly-baked-poster.webp",
+    "souffle-making/freshly-baked-web.mp4",
+    "souffle-making/oven-ready.jpeg",
+    "souffle-making/oven-ready.webp",
+    "souffle-making/pouring-batter.jpeg",
+    "souffle-making/pouring-batter.webp",
 }
 ROOT_REFERENCE = re.compile(r"['\"](/(?:assets|img)/[^'\"\s)]+)")
 
@@ -65,14 +76,14 @@ def main():
     if missing:
         raise SystemExit("Missing generated asset references:\n" + "\n".join(missing))
 
-    public_images = {
+    public_assets = {
         path.relative_to(SITE_DIR / "assets" / "img").as_posix()
         for path in (SITE_DIR / "assets" / "img").rglob("*")
         if path.is_file()
     }
-    if public_images != PUBLIC_IMAGES:
+    if public_assets != PUBLIC_ASSETS:
         raise SystemExit(
-            f"Unexpected fixed-path public images: {sorted(public_images)}"
+            f"Unexpected fixed-path public assets: {sorted(public_assets)}"
         )
 
     font_paths = sorted((SITE_DIR / "assets" / "fonts").glob("*.woff2"))
@@ -86,7 +97,7 @@ def main():
 
     print(
         f"Verified {len(parser.references)} local references, "
-        f"{len(public_images)} fixed-path images, and {len(font_paths)} WOFF2 fonts"
+        f"{len(public_assets)} fixed-path assets, and {len(font_paths)} WOFF2 fonts"
     )
 
 
