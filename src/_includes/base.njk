@@ -65,6 +65,28 @@
     {{ content | safe }}
     {% include 'footer.liquid' %}
 
+    {% if page.url != "/" %}
+      <a
+        href="/"
+        aria-label="トップページへ"
+        class="js-home-link bg-spring-900 hover:bg-spring-800 focus-visible:outline-spring-700 fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 z-20 inline-flex size-12 items-center justify-center rounded-full text-white shadow-md transition focus-visible:outline-3 focus-visible:outline-offset-3 motion-reduce:transition-none"
+      >
+        <svg
+          aria-hidden="true"
+          class="size-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+          viewBox="0 0 24 24"
+        >
+          <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+        </svg>
+      </a>
+      <script src="/assets/js/home-link.js" type="module"></script>
+    {% endif %}
+
     {% if eleventy.env.runMode == "serve" %}
       {% include 'debug.liquid' %}
     {% endif %}
