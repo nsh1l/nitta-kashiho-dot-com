@@ -12,6 +12,13 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = ROOT / "_site"
 PUBLIC_ASSETS = {
+    "caramel-cookie/01-formed.jpeg",
+    "caramel-cookie/02-ready-for-oven.jpeg",
+    "caramel-cookie/03-baked.jpeg",
+    "caramel-cookie/04-sorting.jpeg",
+    "caramel-cookie/05-package.jpeg",
+    "caramel-cookie/cookie-forming-poster.jpeg",
+    "caramel-cookie/cookie-forming.mp4",
     "discontinued/mixcake.jpg",
     "fathers-sunflower.webp",
     "hq.jpg",
