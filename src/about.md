@@ -1,6 +1,7 @@
 ---
 title: about
 layout: docs
+ogImage: /assets/img/hq.jpg
 ---
 
 # 有限会社 新田菓子舗

@@ -1,6 +1,7 @@
 ---
 title: 特定商取引法に基づく表記
 layout: docs
+ogImage: /assets/img/hq.jpg
 ---
 
 # 特定商取引に関する法律に基づく表示

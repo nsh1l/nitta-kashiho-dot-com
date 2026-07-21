@@ -22,7 +22,7 @@
     />
     <meta
       property="og:image"
-      content="{{ ogImage or '/assets/img/souffle.jpg' }}"
+      content="{{ info.siteUrl }}{{ ogImage or '/assets/img/souffle.jpg' }}"
     />
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:locale" content="ja_JP" />
@@ -39,7 +39,7 @@
     />
     <meta
       name="twitter:image"
-      content="{{ ogImage or '/assets/img/souffle.jpg' }}"
+      content="{{ info.siteUrl }}{{ ogImage or '/assets/img/souffle.jpg' }}"
     />
 
     <title>

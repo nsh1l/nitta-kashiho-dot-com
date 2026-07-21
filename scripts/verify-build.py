@@ -12,8 +12,11 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = ROOT / "_site"
 PUBLIC_ASSETS = {
+    "discontinued/mixcake.jpg",
     "fathers-sunflower.webp",
+    "hq.jpg",
     "logo.svg",
+    "shops/hiruzen-center-2.jpg",
     "souffle.jpg",
     "ushi_cyan.jpg",
     "souffle-making/baking.jpeg",
@@ -52,7 +55,12 @@ class AssetReferenceParser(HTMLParser):
                 continue
             if name == "srcset":
                 self.references.update(part.split()[0] for part in value.split(","))
-            elif name in {"src", "href", "data-fallback"}:
+            elif name in {"src", "href", "data-fallback"} or (
+                name == "content" and any(
+                    key in {"og:image", "twitter:image"}
+                    for key, _ in attrs
+                )
+            ):
                 self.references.add(value)
 
 
