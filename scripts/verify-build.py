@@ -15,7 +15,7 @@ PUBLIC_ASSETS = {
     "discontinued/mixcake.jpg",
     "fathers-sunflower.webp",
     "hq.jpg",
-    "logo.svg",
+    "logo.jpg",
     "shops/hiruzen-center-2.jpg",
     "souffle.jpg",
     "ushi_cyan.jpg",

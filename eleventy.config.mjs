@@ -25,7 +25,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/vendor");
   eleventyConfig.addPassthroughCopy("src/assets/fonts/line-seed-jp.css");
   eleventyConfig.addPassthroughCopy({
-    "src/assets/img/logo.svg": "assets/img/logo.svg",
+    "src/assets/img/logo.jpg": "assets/img/logo.jpg",
     "src/assets/img/souffle.jpg": "assets/img/souffle.jpg",
     "src/assets/img/ushi_cyan.jpg": "assets/img/ushi_cyan.jpg",
     "src/assets/img/fathers-sunflower.webp": "assets/img/fathers-sunflower.webp",
