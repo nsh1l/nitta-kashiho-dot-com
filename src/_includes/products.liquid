@@ -20,7 +20,7 @@
         {% for item in group.items %}
           {% assign desc_len = item.description | size %}
           {% assign long_desc = desc_len > toggle_threshold %}
-          <div class="flex flex-row bg-white rounded-xl shadow-md overflow-hidden border border-koshian-100{% if item.id == 'souffle' %} sm:col-span-2{% endif %}">
+          <div class="flex flex-row bg-white rounded-xl shadow-md overflow-hidden border border-koshian-100{% if item.id == 'souffle' or item.id == 'manju' %} sm:col-span-2{% endif %}">
             <div class="w-1/3 shrink-0 overflow-hidden bg-koshian-50">
               <picture>
                 <source srcset="{{ item.image | webp }}" type="image/webp">
