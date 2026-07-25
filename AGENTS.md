@@ -127,3 +127,5 @@ No tests currently configured.
 1. Use Tailwind utilities directly in templates
 2. If custom CSS needed, add `@layer components { .btn { ... } }` to `global.css`
 3. Run `bun run build:css` to recompile
+
+IMPORTANT: Do not write overly defensive code. Always prefer simplicity over pathological complexity.
