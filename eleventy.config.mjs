@@ -28,13 +28,17 @@ export default function (eleventyConfig) {
     "src/assets/img/logo.jpg": "assets/img/logo.jpg",
     "src/assets/img/souffle.jpg": "assets/img/souffle.jpg",
     "src/assets/img/ushi_cyan.jpg": "assets/img/ushi_cyan.jpg",
-    "src/assets/img/fathers-sunflower.webp": "assets/img/fathers-sunflower.webp",
+    "src/assets/img/fathers-sunflower.webp":
+      "assets/img/fathers-sunflower.webp",
     "src/assets/img/hq.jpg": "assets/img/hq.jpg",
-    "src/assets/img/shops/hiruzen-center-2.jpg": "assets/img/shops/hiruzen-center-2.jpg",
-    "src/assets/img/discontinued/mixcake.jpg": "assets/img/discontinued/mixcake.jpg",
+    "src/assets/img/shops/hiruzen-center-2.jpg":
+      "assets/img/shops/hiruzen-center-2.jpg",
+    "src/assets/img/discontinued/mixcake.jpg":
+      "assets/img/discontinued/mixcake.jpg",
   });
   eleventyConfig.addPassthroughCopy("src/assets/img/souffle-making");
   eleventyConfig.addPassthroughCopy("src/assets/img/yukino-roll");
+  eleventyConfig.addPassthroughCopy("src/assets/img/caramel-cookie");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.setServerOptions({
     port: 4722,
